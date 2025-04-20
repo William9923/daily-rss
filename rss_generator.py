@@ -11,7 +11,7 @@ feeds = [
             "self_link": "https://william9923.github.io/daily-rss/leetcode.xml",
             "description": "Daily coding challenge from LeetCode",
         },
-        "target_file": "docs/leetcode.xml",
+        "target_file": "output/leetcode.xml",
     },
 ]
 
