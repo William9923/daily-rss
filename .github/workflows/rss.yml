@@ -6,11 +6,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-rss:
     runs-on: ubuntu-latest
-    environment: Prod
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -21,10 +26,5 @@ jobs:
           pip install -r requirements.txt
       - name: Generate RSS feed
         run: python rss_generator.py
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add output/
-          git commit -m "Update RSS feed" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} HEAD:master
+      # Commit all changed files back to the repository
+      - uses: stefanzweifel/git-auto-commit-action@v5
