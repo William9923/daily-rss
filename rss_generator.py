@@ -14,11 +14,11 @@ feeds = [
         "feed": LeetCodeDailyFeed(session=leetcode_session),
         "feed_info": {
             "title": "LeetCode Daily Challenge",
-            "link": "https://leetcode_dailyleetcode.com/problemset/all/?daily=true",
-            "self_link": "https://william9923.github.io/daily-rss/leetcode.xml",
+            "link": "https://william9923.github.io/daily-rss/output/leetcode.rss",
+            "self_link": "https://william9923.github.io/daily-rss/output/leetcode.rss",
             "description": "Daily coding challenge from LeetCode",
         },
-        "target_file": "output/leetcode.xml",
+        "target_file": "output/leetcode.rss",
     },
 ]
 
