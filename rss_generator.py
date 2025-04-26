@@ -1,10 +1,17 @@
+import os
+from dotenv import load_dotenv
+
 from feedgen.feed import FeedGenerator
 
 from feeds.daily_leetcode import LeetCodeDailyFeed
 
+
+load_dotenv()
+
+leetcode_session = f"LEETCODE_SESSION={os.getenv('LEETCODE_SESSION')}"
 feeds = [
     {
-        "feed": LeetCodeDailyFeed(),
+        "feed": LeetCodeDailyFeed(session=leetcode_session),
         "feed_info": {
             "title": "LeetCode Daily Challenge",
             "link": "https://leetcode_dailyleetcode.com/problemset/all/?daily=true",
@@ -33,6 +40,8 @@ def generate_rss(feed_instance, output_path, feed_info):
         fe.pubDate(entry["pubDate"])
         if "description" in entry:
             fe.description(entry["description"])
+        if "content" in entry:
+            fe.content(entry["content"], type="CDATA")
 
     fg.rss_file(output_path)
 
