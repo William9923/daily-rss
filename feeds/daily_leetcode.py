@@ -39,7 +39,6 @@ class LeetCodeDailyFeed(BaseFeed):
         slug = data["question"]["titleSlug"]
 
         content = self.get_question_content(slug)
-        escaped_content = html.unescape(content)
 
         entry = {
             "title": data["question"]["title"],
@@ -48,8 +47,8 @@ class LeetCodeDailyFeed(BaseFeed):
             "pubDate": datetime.strptime(data["date"], "%Y-%m-%d").replace(
                 tzinfo=timezone.utc
             ),
-            "description": escaped_content,
-            "content": escaped_content,
+            "description": content,
+            "content": content,
             "slug": slug,
         }
 
