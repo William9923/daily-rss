@@ -4,17 +4,8 @@ from typing import Any, Dict, List
 
 import requests
 import html
-import html2text
 
 from .base_feed import BaseFeed
-
-
-def html_to_markdown(html_content):
-    h = html2text.HTML2Text()
-    h.ignore_links = False
-    h.ignore_images = True
-    h.body_width = 0
-    return h.handle(html_content)
 
 
 class LeetCodeDailyFeed(BaseFeed):
@@ -48,8 +39,7 @@ class LeetCodeDailyFeed(BaseFeed):
         slug = data["question"]["titleSlug"]
 
         content = self.get_question_content(slug)
-        converted_content = html_to_markdown(content)
-        escaped_content = html.unescape(converted_content)
+        escaped_content = html.unescape(content)
 
         entry = {
             "title": data["question"]["title"],

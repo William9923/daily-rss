@@ -14,11 +14,11 @@ feeds = [
         "feed": LeetCodeDailyFeed(session=leetcode_session),
         "feed_info": {
             "title": "LeetCode Daily Challenge",
-            "link": "https://william9923.github.io/daily-rss/output/leetcode.rss",
-            "self_link": "https://william9923.github.io/daily-rss/output/leetcode.rss",
+            "link": "https://william9923.github.io/daily-rss/output/leetcode.xml",
+            "self_link": "https://william9923.github.io/daily-rss/output/leetcode.xml",
             "description": "Daily coding challenge from LeetCode",
         },
-        "target_file": "output/leetcode.rss",
+        "target_file": "output/leetcode.xml",
     },
 ]
 
@@ -43,7 +43,7 @@ def generate_rss(feed_instance, output_path, feed_info):
         if "content" in entry:
             fe.content(entry["content"], type="CDATA")
 
-    fg.rss_file(output_path)
+    fg.rss_file(output_path, pretty=True)
 
 
 if __name__ == "__main__":
