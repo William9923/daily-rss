@@ -29,6 +29,9 @@ jobs:
         env: 
           LEETCODE_SESSION: ${{ secrets.LEETCODE_SESSION }}
       # Commit all changed files back to the repository
+      - name: Get current date and time
+        id: get_date
+        run: echo "CURRENT_TIME=$(date '+%Y/%m/%dT%H:%M:%S')" >> $GITHUB_ENV
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto Generate RSS Feed - $(date '+%Y/%m/%dT%H:%M:%S')"
+          commit_message: "Auto Generate RSS Feed - ${{ env.CURRENT_TIME }}"
