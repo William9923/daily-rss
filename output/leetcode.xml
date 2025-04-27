@@ -8,88 +8,82 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Apr 2025 23:36:33 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Apr 2025 02:20:44 +0000</lastBuildDate>
     <item>
-      <title>Count Subarrays With Fixed Bounds</title>
-      <link>https://leetcode.com/problems/count-subarrays-with-fixed-bounds/</link>
-      <description>&lt;p&gt;You are given an integer array &lt;code&gt;nums&lt;/code&gt; and two integers &lt;code&gt;minK&lt;/code&gt; and &lt;code&gt;maxK&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;A &lt;strong&gt;fixed-bound subarray&lt;/strong&gt; of &lt;code&gt;nums&lt;/code&gt; is a subarray that satisfies the following conditions:&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;The &lt;strong&gt;minimum&lt;/strong&gt; value in the subarray is equal to &lt;code&gt;minK&lt;/code&gt;.&lt;/li&gt;
-	&lt;li&gt;The &lt;strong&gt;maximum&lt;/strong&gt; value in the subarray is equal to &lt;code&gt;maxK&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Return &lt;em&gt;the &lt;strong&gt;number&lt;/strong&gt; of fixed-bound subarrays&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;A &lt;strong&gt;subarray&lt;/strong&gt; is a &lt;strong&gt;contiguous&lt;/strong&gt; part of an array.&lt;/p&gt;
+      <title>Count Subarrays of Length Three With a Condition</title>
+      <link>https://leetcode.com/problems/count-subarrays-of-length-three-with-a-condition/</link>
+      <description>&lt;p&gt;Given an integer array &lt;code&gt;nums&lt;/code&gt;, return the number of &lt;span data-keyword="subarray-nonempty"&gt;subarrays&lt;/span&gt; of length 3 such that the sum of the first and third numbers equals &lt;em&gt;exactly&lt;/em&gt; half of the second number.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; nums = [1,3,5,2,7,5], minK = 1, maxK = 5
-&lt;strong&gt;Output:&lt;/strong&gt; 2
-&lt;strong&gt;Explanation:&lt;/strong&gt; The fixed-bound subarrays are [1,3,5] and [1,3,5,2].
-&lt;/pre&gt;
+&lt;div class="example-block"&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io"&gt;nums = [1,2,1,4,1]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io"&gt;1&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Only the subarray &lt;code&gt;[1,4,1]&lt;/code&gt; contains exactly 3 elements where the sum of the first and third numbers equals half the middle number.&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; nums = [1,1,1,1], minK = 1, maxK = 1
-&lt;strong&gt;Output:&lt;/strong&gt; 10
-&lt;strong&gt;Explanation:&lt;/strong&gt; Every subarray of nums is a fixed-bound subarray. There are 10 possible subarrays.
-&lt;/pre&gt;
+&lt;div class="example-block"&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io"&gt;nums = [1,1,1]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io"&gt;0&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[1,1,1]&lt;/code&gt; is the only subarray of length 3. However, its first and third numbers do not add to half the middle number.&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;2 &amp;lt;= nums.length &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums[i], minK, maxK &amp;lt;= 10&lt;sup&gt;6&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;3 &amp;lt;= nums.length &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;&lt;font face="monospace"&gt;-100 &amp;lt;= nums[i] &amp;lt;= 100&lt;/font&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>You are given an integer array <code>nums</code> and two integers <code>minK</code> and <code>maxK</code>.</p>
-
-<p>A <strong>fixed-bound subarray</strong> of <code>nums</code> is a subarray that satisfies the following conditions:</p>
-
-<ul>
-	<li>The <strong>minimum</strong> value in the subarray is equal to <code>minK</code>.</li>
-	<li>The <strong>maximum</strong> value in the subarray is equal to <code>maxK</code>.</li>
-</ul>
-
-<p>Return <em>the <strong>number</strong> of fixed-bound subarrays</em>.</p>
-
-<p>A <strong>subarray</strong> is a <strong>contiguous</strong> part of an array.</p>
+      <content:encoded><![CDATA[<p>Given an integer array <code>nums</code>, return the number of <span data-keyword="subarray-nonempty">subarrays</span> of length 3 such that the sum of the first and third numbers equals <em>exactly</em> half of the second number.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre>
-<strong>Input:</strong> nums = [1,3,5,2,7,5], minK = 1, maxK = 5
-<strong>Output:</strong> 2
-<strong>Explanation:</strong> The fixed-bound subarrays are [1,3,5] and [1,3,5,2].
-</pre>
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">nums = [1,2,1,4,1]</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">1</span></p>
+
+<p><strong>Explanation:</strong></p>
+
+<p>Only the subarray <code>[1,4,1]</code> contains exactly 3 elements where the sum of the first and third numbers equals half the middle number.</p>
+</div>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre>
-<strong>Input:</strong> nums = [1,1,1,1], minK = 1, maxK = 1
-<strong>Output:</strong> 10
-<strong>Explanation:</strong> Every subarray of nums is a fixed-bound subarray. There are 10 possible subarrays.
-</pre>
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">nums = [1,1,1]</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">0</span></p>
+
+<p><strong>Explanation:</strong></p>
+
+<p><code>[1,1,1]</code> is the only subarray of length 3. However, its first and third numbers do not add to half the middle number.</p>
+</div>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>2 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>1 &lt;= nums[i], minK, maxK &lt;= 10<sup>6</sup></code></li>
+	<li><code>3 &lt;= nums.length &lt;= 100</code></li>
+	<li><code><font face="monospace">-100 &lt;= nums[i] &lt;= 100</font></code></li>
 </ul>
 ]]></content:encoded>
-      <guid isPermaLink="false">count-subarrays-with-fixed-bounds</guid>
-      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">count-subarrays-of-length-three-with-a-condition</guid>
+      <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
