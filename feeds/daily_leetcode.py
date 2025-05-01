@@ -1,9 +1,8 @@
-# feeds/leetcode_daily.py
+import html
 from datetime import datetime, timezone
 from typing import Any, Dict, List
 
 import requests
-import html
 
 from .base_feed import BaseFeed
 
