@@ -102,12 +102,15 @@ class LogamMuliaFeed(BaseFeed):
                 f"<tr><td>{section}</td><td>{weight}</td><td>{base_price}</td><td>{taxed_price}</td></tr>"
             )
 
+        content = self.__table_template(items)
+
         return [
             {
                 "title": f"Gold Price in Indonesia - {self.current_day}",
                 "link": self.url,
-                "guid": f"{self.url}-{datetime.utcnow().isoformat()}",
+                "guid": f"{self.url}-{datetime.now().isoformat()}",
                 "pubDate": datetime.now(tz=timezone.utc),
-                "content": self.__table_template(items),
+                "description": content,
+                "content": content,
             }
         ]
