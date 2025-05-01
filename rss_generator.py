@@ -1,10 +1,10 @@
 import os
-from dotenv import load_dotenv
 
+from dotenv import load_dotenv
 from feedgen.feed import FeedGenerator
 
 from feeds.daily_leetcode import LeetCodeDailyFeed
-
+from feeds.logam_mulia import LogamMuliaFeed
 
 load_dotenv()
 
@@ -19,6 +19,16 @@ feeds = [
             "description": "Daily coding challenge from LeetCode",
         },
         "target_file": "output/leetcode.xml",
+    },
+    {
+        "feed": LogamMuliaFeed(),
+        "feed_info": {
+            "title": "Gold Price (Antam) - ID",
+            "link": "https://william9923.github.io/daily-rss/output/logam-mulia.xml",
+            "self_link": "https://william9923.github.io/daily-rss/output/logam-mulia.xml",
+            "description": "Harga emas batangan dari Logam Mulia",
+        },
+        "target_file": "output/gold-price-id.xml",
     },
 ]
 

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Gold Price (Antam) - ID</title>
+    <link>https://william9923.github.io/daily-rss/output/logam-mulia.xml</link>
+    <description>Harga emas batangan dari Logam Mulia</description>
+    <atom:link href="https://william9923.github.io/daily-rss/output/logam-mulia.xml" rel="self"/>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 01 May 2025 11:48:58 +0000</lastBuildDate>
+    <item>
+      <title>Gold Price in Indonesia - Thursday, 01 May 2025</title>
+      <link>https://www.logammulia.com/id/harga-emas-hari-ini</link>
+      <description><![CDATA[<style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            thead {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+            tbody tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            tbody tr:hover {
+                background-color: #f1f1f1;
+            }
+            h2 {
+                font-family: Arial, sans-serif;
+                color: #333;
+            }
+        </style>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Weight</th>
+                    <th>Base Price</th>
+                    <th>Price + Tax</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Emas Batangan</td><td>0.5 gr</td><td>1,016,000</td><td>1,018,540</td></tr><tr><td>Emas Batangan</td><td>1 gr</td><td>1,932,000</td><td>1,936,830</td></tr><tr><td>Emas Batangan</td><td>2 gr</td><td>3,804,000</td><td>3,813,510</td></tr><tr><td>Emas Batangan</td><td>3 gr</td><td>5,681,000</td><td>5,695,203</td></tr><tr><td>Emas Batangan</td><td>5 gr</td><td>9,435,000</td><td>9,458,588</td></tr><tr><td>Emas Batangan</td><td>10 gr</td><td>18,815,000</td><td>18,862,038</td></tr><tr><td>Emas Batangan</td><td>25 gr</td><td>46,912,000</td><td>47,029,280</td></tr><tr><td>Emas Batangan</td><td>50 gr</td><td>93,745,000</td><td>93,979,363</td></tr><tr><td>Emas Batangan</td><td>100 gr</td><td>187,412,000</td><td>187,880,530</td></tr><tr><td>Emas Batangan</td><td>250 gr</td><td>468,265,000</td><td>469,435,663</td></tr><tr><td>Emas Batangan</td><td>500 gr</td><td>936,320,000</td><td>938,660,800</td></tr><tr><td>Emas Batangan</td><td>1000 gr</td><td>1,872,600,000</td><td>1,877,281,500</td></tr><tr><td>Emas Batangan Gift Series</td><td>0.5 gr</td><td>1,086,000</td><td>1,088,715</td></tr><tr><td>Emas Batangan Gift Series</td><td>1 gr</td><td>2,082,000</td><td>2,087,205</td></tr><tr><td>Emas Batangan Selamat Idul Fitri</td><td>5 gr</td><td>10,270,000</td><td>10,295,675</td></tr><tr><td>Emas Batangan Imlek</td><td>8 gr</td><td>15,924,671</td><td>15,964,483</td></tr><tr><td>Emas Batangan Imlek</td><td>88 gr</td><td>172,588,278</td><td>173,019,749</td></tr><tr><td>Emas Batangan Batik Seri III</td><td>10 gr</td><td>19,820,000</td><td>19,869,550</td></tr><tr><td>Emas Batangan Batik Seri III</td><td>20 gr</td><td>38,840,000</td><td>38,937,100</td></tr>
+            </tbody>
+        </table>]]></description>
+      <guid isPermaLink="false">https://www.logammulia.com/id/harga-emas-hari-ini-2025-05-01T11:49:09.577007</guid>
+      <pubDate>Thu, 01 May 2025 11:49:09 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
