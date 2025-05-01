@@ -8,80 +8,122 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Apr 2025 23:50:13 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 May 2025 02:22:08 +0000</lastBuildDate>
     <item>
-      <title>Find Numbers with Even Number of Digits</title>
-      <link>https://leetcode.com/problems/find-numbers-with-even-number-of-digits/</link>
-      <description>&lt;p&gt;Given an array &lt;code&gt;nums&lt;/code&gt; of integers, return how many of them contain an &lt;strong&gt;even number&lt;/strong&gt; of digits.&lt;/p&gt;
+      <title>Maximum Number of Tasks You Can Assign</title>
+      <link>https://leetcode.com/problems/maximum-number-of-tasks-you-can-assign/</link>
+      <description>&lt;p&gt;You have &lt;code&gt;n&lt;/code&gt; tasks and &lt;code&gt;m&lt;/code&gt; workers. Each task has a strength requirement stored in a &lt;strong&gt;0-indexed&lt;/strong&gt; integer array &lt;code&gt;tasks&lt;/code&gt;, with the &lt;code&gt;i&lt;sup&gt;th&lt;/sup&gt;&lt;/code&gt; task requiring &lt;code&gt;tasks[i]&lt;/code&gt; strength to complete. The strength of each worker is stored in a &lt;strong&gt;0-indexed&lt;/strong&gt; integer array &lt;code&gt;workers&lt;/code&gt;, with the &lt;code&gt;j&lt;sup&gt;th&lt;/sup&gt;&lt;/code&gt; worker having &lt;code&gt;workers[j]&lt;/code&gt; strength. Each worker can only be assigned to a &lt;strong&gt;single&lt;/strong&gt; task and must have a strength &lt;strong&gt;greater than or equal&lt;/strong&gt; to the task&amp;#39;s strength requirement (i.e., &lt;code&gt;workers[j] &amp;gt;= tasks[i]&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Additionally, you have &lt;code&gt;pills&lt;/code&gt; magical pills that will &lt;strong&gt;increase a worker&amp;#39;s strength&lt;/strong&gt; by &lt;code&gt;strength&lt;/code&gt;. You can decide which workers receive the magical pills, however, you may only give each worker &lt;strong&gt;at most one&lt;/strong&gt; magical pill.&lt;/p&gt;
+
+&lt;p&gt;Given the &lt;strong&gt;0-indexed &lt;/strong&gt;integer arrays &lt;code&gt;tasks&lt;/code&gt; and &lt;code&gt;workers&lt;/code&gt; and the integers &lt;code&gt;pills&lt;/code&gt; and &lt;code&gt;strength&lt;/code&gt;, return &lt;em&gt;the &lt;strong&gt;maximum&lt;/strong&gt; number of tasks that can be completed.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; nums = [12,345,2,6,7896]
-&lt;strong&gt;Output:&lt;/strong&gt; 2
-&lt;strong&gt;Explanation: 
-&lt;/strong&gt;12 contains 2 digits (even number of digits).&amp;nbsp;
-345 contains 3 digits (odd number of digits).&amp;nbsp;
-2 contains 1 digit (odd number of digits).&amp;nbsp;
-6 contains 1 digit (odd number of digits).&amp;nbsp;
-7896 contains 4 digits (even number of digits).&amp;nbsp;
-Therefore only 12 and 7896 contain an even number of digits.
+&lt;strong&gt;Input:&lt;/strong&gt; tasks = [&lt;u&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/u&gt;,&lt;u&gt;&lt;strong&gt;2&lt;/strong&gt;&lt;/u&gt;,&lt;u&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/u&gt;], workers = [&lt;u&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/u&gt;,&lt;u&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/u&gt;,&lt;u&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/u&gt;], pills = 1, strength = 1
+&lt;strong&gt;Output:&lt;/strong&gt; 3
+&lt;strong&gt;Explanation:&lt;/strong&gt;
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 0.
+- Assign worker 0 to task 2 (0 + 1 &amp;gt;= 1)
+- Assign worker 1 to task 1 (3 &amp;gt;= 2)
+- Assign worker 2 to task 0 (3 &amp;gt;= 3)
 &lt;/pre&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; nums = [555,901,482,1771]
-&lt;strong&gt;Output:&lt;/strong&gt; 1 
-&lt;strong&gt;Explanation: &lt;/strong&gt;
-Only 1771 contains an even number of digits.
+&lt;strong&gt;Input:&lt;/strong&gt; tasks = [&lt;u&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;/u&gt;,4], workers = [&lt;u&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/u&gt;,0,0], pills = 1, strength = 5
+&lt;strong&gt;Output:&lt;/strong&gt; 1
+&lt;strong&gt;Explanation:&lt;/strong&gt;
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 0.
+- Assign worker 0 to task 0 (0 + 5 &amp;gt;= 5)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong class="example"&gt;Example 3:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;strong&gt;Input:&lt;/strong&gt; tasks = [&lt;u&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/u&gt;,&lt;u&gt;&lt;strong&gt;15&lt;/strong&gt;&lt;/u&gt;,30], workers = [&lt;u&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/u&gt;,&lt;u&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/u&gt;,10,10,10], pills = 3, strength = 10
+&lt;strong&gt;Output:&lt;/strong&gt; 2
+&lt;strong&gt;Explanation:&lt;/strong&gt;
+We can assign the magical pills and tasks as follows:
+- Give the magical pill to worker 0 and worker 1.
+- Assign worker 0 to task 0 (0 + 10 &amp;gt;= 10)
+- Assign worker 1 to task 1 (10 + 10 &amp;gt;= 15)
+The last pill is not given because it will not make any worker strong enough for the last task.
 &lt;/pre&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 500&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums[i] &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;n == tasks.length&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;m == workers.length&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= n, m &amp;lt;= 5 * 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;0 &amp;lt;= pills &amp;lt;= m&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;0 &amp;lt;= tasks[i], workers[j], strength &amp;lt;= 10&lt;sup&gt;9&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>Given an array <code>nums</code> of integers, return how many of them contain an <strong>even number</strong> of digits.</p>
+      <content:encoded><![CDATA[<p>You have <code>n</code> tasks and <code>m</code> workers. Each task has a strength requirement stored in a <strong>0-indexed</strong> integer array <code>tasks</code>, with the <code>i<sup>th</sup></code> task requiring <code>tasks[i]</code> strength to complete. The strength of each worker is stored in a <strong>0-indexed</strong> integer array <code>workers</code>, with the <code>j<sup>th</sup></code> worker having <code>workers[j]</code> strength. Each worker can only be assigned to a <strong>single</strong> task and must have a strength <strong>greater than or equal</strong> to the task&#39;s strength requirement (i.e., <code>workers[j] &gt;= tasks[i]</code>).</p>
+
+<p>Additionally, you have <code>pills</code> magical pills that will <strong>increase a worker&#39;s strength</strong> by <code>strength</code>. You can decide which workers receive the magical pills, however, you may only give each worker <strong>at most one</strong> magical pill.</p>
+
+<p>Given the <strong>0-indexed </strong>integer arrays <code>tasks</code> and <code>workers</code> and the integers <code>pills</code> and <code>strength</code>, return <em>the <strong>maximum</strong> number of tasks that can be completed.</em></p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
 <pre>
-<strong>Input:</strong> nums = [12,345,2,6,7896]
-<strong>Output:</strong> 2
-<strong>Explanation: 
-</strong>12 contains 2 digits (even number of digits).&nbsp;
-345 contains 3 digits (odd number of digits).&nbsp;
-2 contains 1 digit (odd number of digits).&nbsp;
-6 contains 1 digit (odd number of digits).&nbsp;
-7896 contains 4 digits (even number of digits).&nbsp;
-Therefore only 12 and 7896 contain an even number of digits.
+<strong>Input:</strong> tasks = [<u><strong>3</strong></u>,<u><strong>2</strong></u>,<u><strong>1</strong></u>], workers = [<u><strong>0</strong></u>,<u><strong>3</strong></u>,<u><strong>3</strong></u>], pills = 1, strength = 1
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 0.
+- Assign worker 0 to task 2 (0 + 1 &gt;= 1)
+- Assign worker 1 to task 1 (3 &gt;= 2)
+- Assign worker 2 to task 0 (3 &gt;= 3)
 </pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> nums = [555,901,482,1771]
-<strong>Output:</strong> 1 
-<strong>Explanation: </strong>
-Only 1771 contains an even number of digits.
+<strong>Input:</strong> tasks = [<u><strong>5</strong></u>,4], workers = [<u><strong>0</strong></u>,0,0], pills = 1, strength = 5
+<strong>Output:</strong> 1
+<strong>Explanation:</strong>
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 0.
+- Assign worker 0 to task 0 (0 + 5 &gt;= 5)
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre>
+<strong>Input:</strong> tasks = [<u><strong>10</strong></u>,<u><strong>15</strong></u>,30], workers = [<u><strong>0</strong></u>,<u><strong>10</strong></u>,10,10,10], pills = 3, strength = 10
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+We can assign the magical pills and tasks as follows:
+- Give the magical pill to worker 0 and worker 1.
+- Assign worker 0 to task 0 (0 + 10 &gt;= 10)
+- Assign worker 1 to task 1 (10 + 10 &gt;= 15)
+The last pill is not given because it will not make any worker strong enough for the last task.
 </pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>1 &lt;= nums.length &lt;= 500</code></li>
-	<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+	<li><code>n == tasks.length</code></li>
+	<li><code>m == workers.length</code></li>
+	<li><code>1 &lt;= n, m &lt;= 5 * 10<sup>4</sup></code></li>
+	<li><code>0 &lt;= pills &lt;= m</code></li>
+	<li><code>0 &lt;= tasks[i], workers[j], strength &lt;= 10<sup>9</sup></code></li>
 </ul>
 ]]></content:encoded>
-      <guid isPermaLink="false">find-numbers-with-even-number-of-digits</guid>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">maximum-number-of-tasks-you-can-assign</guid>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
