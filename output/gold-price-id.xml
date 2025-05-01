@@ -8,11 +8,51 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 May 2025 11:54:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 May 2025 12:37:20 +0000</lastBuildDate>
     <item>
       <title>Gold Price in Indonesia - Thursday, 01 May 2025</title>
       <link>https://www.logammulia.com/id/harga-emas-hari-ini</link>
-      <description><![CDATA[<style>
+      <description>&lt;style&gt;
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            thead {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+            tbody tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            tbody tr:hover {
+                background-color: #f1f1f1;
+            }
+            h2 {
+                font-family: Arial, sans-serif;
+                color: #333;
+            }
+        &lt;/style&gt;
+        &lt;table&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Category&lt;/th&gt;
+                    &lt;th&gt;Weight&lt;/th&gt;
+                    &lt;th&gt;Base Price&lt;/th&gt;
+                    &lt;th&gt;Price + Tax&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;0.5 gr&lt;/td&gt;&lt;td&gt;1,016,000&lt;/td&gt;&lt;td&gt;1,018,540&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;1 gr&lt;/td&gt;&lt;td&gt;1,932,000&lt;/td&gt;&lt;td&gt;1,936,830&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;2 gr&lt;/td&gt;&lt;td&gt;3,804,000&lt;/td&gt;&lt;td&gt;3,813,510&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;3 gr&lt;/td&gt;&lt;td&gt;5,681,000&lt;/td&gt;&lt;td&gt;5,695,203&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;5 gr&lt;/td&gt;&lt;td&gt;9,435,000&lt;/td&gt;&lt;td&gt;9,458,588&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;10 gr&lt;/td&gt;&lt;td&gt;18,815,000&lt;/td&gt;&lt;td&gt;18,862,038&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;25 gr&lt;/td&gt;&lt;td&gt;46,912,000&lt;/td&gt;&lt;td&gt;47,029,280&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;50 gr&lt;/td&gt;&lt;td&gt;93,745,000&lt;/td&gt;&lt;td&gt;93,979,363&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;100 gr&lt;/td&gt;&lt;td&gt;187,412,000&lt;/td&gt;&lt;td&gt;187,880,530&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;250 gr&lt;/td&gt;&lt;td&gt;468,265,000&lt;/td&gt;&lt;td&gt;469,435,663&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;500 gr&lt;/td&gt;&lt;td&gt;936,320,000&lt;/td&gt;&lt;td&gt;938,660,800&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan&lt;/td&gt;&lt;td&gt;1000 gr&lt;/td&gt;&lt;td&gt;1,872,600,000&lt;/td&gt;&lt;td&gt;1,877,281,500&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan Gift Series&lt;/td&gt;&lt;td&gt;0.5 gr&lt;/td&gt;&lt;td&gt;1,086,000&lt;/td&gt;&lt;td&gt;1,088,715&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan Gift Series&lt;/td&gt;&lt;td&gt;1 gr&lt;/td&gt;&lt;td&gt;2,082,000&lt;/td&gt;&lt;td&gt;2,087,205&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan Selamat Idul Fitri&lt;/td&gt;&lt;td&gt;5 gr&lt;/td&gt;&lt;td&gt;10,270,000&lt;/td&gt;&lt;td&gt;10,295,675&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan Imlek&lt;/td&gt;&lt;td&gt;8 gr&lt;/td&gt;&lt;td&gt;15,924,671&lt;/td&gt;&lt;td&gt;15,964,483&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan Imlek&lt;/td&gt;&lt;td&gt;88 gr&lt;/td&gt;&lt;td&gt;172,588,278&lt;/td&gt;&lt;td&gt;173,019,749&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan Batik Seri III&lt;/td&gt;&lt;td&gt;10 gr&lt;/td&gt;&lt;td&gt;19,820,000&lt;/td&gt;&lt;td&gt;19,869,550&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Emas Batangan Batik Seri III&lt;/td&gt;&lt;td&gt;20 gr&lt;/td&gt;&lt;td&gt;38,840,000&lt;/td&gt;&lt;td&gt;38,937,100&lt;/td&gt;&lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;</description>
+      <content:encoded><![CDATA[<style>
             table {
                 border-collapse: collapse;
                 width: 100%;
@@ -51,9 +91,9 @@
             <tbody>
                 <tr><td>Emas Batangan</td><td>0.5 gr</td><td>1,016,000</td><td>1,018,540</td></tr><tr><td>Emas Batangan</td><td>1 gr</td><td>1,932,000</td><td>1,936,830</td></tr><tr><td>Emas Batangan</td><td>2 gr</td><td>3,804,000</td><td>3,813,510</td></tr><tr><td>Emas Batangan</td><td>3 gr</td><td>5,681,000</td><td>5,695,203</td></tr><tr><td>Emas Batangan</td><td>5 gr</td><td>9,435,000</td><td>9,458,588</td></tr><tr><td>Emas Batangan</td><td>10 gr</td><td>18,815,000</td><td>18,862,038</td></tr><tr><td>Emas Batangan</td><td>25 gr</td><td>46,912,000</td><td>47,029,280</td></tr><tr><td>Emas Batangan</td><td>50 gr</td><td>93,745,000</td><td>93,979,363</td></tr><tr><td>Emas Batangan</td><td>100 gr</td><td>187,412,000</td><td>187,880,530</td></tr><tr><td>Emas Batangan</td><td>250 gr</td><td>468,265,000</td><td>469,435,663</td></tr><tr><td>Emas Batangan</td><td>500 gr</td><td>936,320,000</td><td>938,660,800</td></tr><tr><td>Emas Batangan</td><td>1000 gr</td><td>1,872,600,000</td><td>1,877,281,500</td></tr><tr><td>Emas Batangan Gift Series</td><td>0.5 gr</td><td>1,086,000</td><td>1,088,715</td></tr><tr><td>Emas Batangan Gift Series</td><td>1 gr</td><td>2,082,000</td><td>2,087,205</td></tr><tr><td>Emas Batangan Selamat Idul Fitri</td><td>5 gr</td><td>10,270,000</td><td>10,295,675</td></tr><tr><td>Emas Batangan Imlek</td><td>8 gr</td><td>15,924,671</td><td>15,964,483</td></tr><tr><td>Emas Batangan Imlek</td><td>88 gr</td><td>172,588,278</td><td>173,019,749</td></tr><tr><td>Emas Batangan Batik Seri III</td><td>10 gr</td><td>19,820,000</td><td>19,869,550</td></tr><tr><td>Emas Batangan Batik Seri III</td><td>20 gr</td><td>38,840,000</td><td>38,937,100</td></tr>
             </tbody>
-        </table>]]></description>
-      <guid isPermaLink="false">https://www.logammulia.com/id/harga-emas-hari-ini-2025-05-01T11:54:39.172967</guid>
-      <pubDate>Thu, 01 May 2025 11:54:39 +0000</pubDate>
+        </table>]]></content:encoded>
+      <guid isPermaLink="false">https://www.logammulia.com/id/harga-emas-hari-ini-2025-05-01T12:37:28.123599</guid>
+      <pubDate>Thu, 01 May 2025 12:37:28 +0000</pubDate>
     </item>
   </channel>
 </rss>
