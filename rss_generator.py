@@ -20,16 +20,6 @@ feeds = [
         },
         "target_file": "output/leetcode.xml",
     },
-    {
-        "feed": LogamMuliaFeed(),
-        "feed_info": {
-            "title": "Gold Price (Antam) - ID",
-            "link": "https://william9923.github.io/daily-rss/output/logam-mulia.xml",
-            "self_link": "https://william9923.github.io/daily-rss/output/logam-mulia.xml",
-            "description": "Harga emas batangan dari Logam Mulia",
-        },
-        "target_file": "output/gold-price-id.xml",
-    },
 ]
 
 
