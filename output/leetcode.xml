@@ -8,98 +8,86 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 02 May 2025 03:01:34 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 May 2025 01:10:34 +0000</lastBuildDate>
     <item>
-      <title>Push Dominoes</title>
-      <link>https://leetcode.com/problems/push-dominoes/</link>
-      <description>&lt;p&gt;There are &lt;code&gt;n&lt;/code&gt; dominoes in a line, and we place each domino vertically upright. In the beginning, we simultaneously push some of the dominoes either to the left or to the right.&lt;/p&gt;
+      <title>Minimum Domino Rotations For Equal Row</title>
+      <link>https://leetcode.com/problems/minimum-domino-rotations-for-equal-row/</link>
+      <description>&lt;p&gt;In a row of dominoes, &lt;code&gt;tops[i]&lt;/code&gt; and &lt;code&gt;bottoms[i]&lt;/code&gt; represent the top and bottom halves of the &lt;code&gt;i&lt;sup&gt;th&lt;/sup&gt;&lt;/code&gt; domino. (A domino is a tile with two numbers from 1 to 6 - one on each half of the tile.)&lt;/p&gt;
 
-&lt;p&gt;After each second, each domino that is falling to the left pushes the adjacent domino on the left. Similarly, the dominoes falling to the right push their adjacent dominoes standing on the right.&lt;/p&gt;
+&lt;p&gt;We may rotate the &lt;code&gt;i&lt;sup&gt;th&lt;/sup&gt;&lt;/code&gt; domino, so that &lt;code&gt;tops[i]&lt;/code&gt; and &lt;code&gt;bottoms[i]&lt;/code&gt; swap values.&lt;/p&gt;
 
-&lt;p&gt;When a vertical domino has dominoes falling on it from both sides, it stays still due to the balance of the forces.&lt;/p&gt;
+&lt;p&gt;Return the minimum number of rotations so that all the values in &lt;code&gt;tops&lt;/code&gt; are the same, or all the values in &lt;code&gt;bottoms&lt;/code&gt; are the same.&lt;/p&gt;
 
-&lt;p&gt;For the purposes of this question, we will consider that a falling domino expends no additional force to a falling or already fallen domino.&lt;/p&gt;
-
-&lt;p&gt;You are given a string &lt;code&gt;dominoes&lt;/code&gt; representing the initial state where:&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;dominoes[i] = &amp;#39;L&amp;#39;&lt;/code&gt;, if the &lt;code&gt;i&lt;sup&gt;th&lt;/sup&gt;&lt;/code&gt; domino has been pushed to the left,&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;dominoes[i] = &amp;#39;R&amp;#39;&lt;/code&gt;, if the &lt;code&gt;i&lt;sup&gt;th&lt;/sup&gt;&lt;/code&gt; domino has been pushed to the right, and&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;dominoes[i] = &amp;#39;.&amp;#39;&lt;/code&gt;, if the &lt;code&gt;i&lt;sup&gt;th&lt;/sup&gt;&lt;/code&gt; domino has not been pushed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Return &lt;em&gt;a string representing the final state&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;If it cannot be done, return &lt;code&gt;-1&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
-
+&lt;img alt="" src="https://assets.leetcode.com/uploads/2021/05/14/domino.png" style="height: 300px; width: 421px;" /&gt;
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; dominoes = &amp;quot;RR.L&amp;quot;
-&lt;strong&gt;Output:&lt;/strong&gt; &amp;quot;RR.L&amp;quot;
-&lt;strong&gt;Explanation:&lt;/strong&gt; The first domino expends no additional force on the second domino.
+&lt;strong&gt;Input:&lt;/strong&gt; tops = [2,1,2,4,2,2], bottoms = [5,2,6,2,3,2]
+&lt;strong&gt;Output:&lt;/strong&gt; 2
+&lt;strong&gt;Explanation:&lt;/strong&gt; 
+The first figure represents the dominoes as given by tops and bottoms: before we do any rotations.
+If we rotate the second and fourth dominoes, we can make every value in the top row equal to 2, as indicated by the second figure.
 &lt;/pre&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;img alt="" src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/05/18/domino.png" style="height: 196px; width: 512px;" /&gt;
+
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; dominoes = &amp;quot;.L.R...LR..L..&amp;quot;
-&lt;strong&gt;Output:&lt;/strong&gt; &amp;quot;LL.RR.LLRRLL..&amp;quot;
+&lt;strong&gt;Input:&lt;/strong&gt; tops = [3,5,1,2,3], bottoms = [3,6,3,3,4]
+&lt;strong&gt;Output:&lt;/strong&gt; -1
+&lt;strong&gt;Explanation:&lt;/strong&gt; 
+In this case, it is not possible to rotate the dominoes to make one row of values equal.
 &lt;/pre&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;n == dominoes.length&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;dominoes[i]&lt;/code&gt; is either &lt;code&gt;&amp;#39;L&amp;#39;&lt;/code&gt;, &lt;code&gt;&amp;#39;R&amp;#39;&lt;/code&gt;, or &lt;code&gt;&amp;#39;.&amp;#39;&lt;/code&gt;.&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;2 &amp;lt;= tops.length &amp;lt;= 2 * 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;bottoms.length == tops.length&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= tops[i], bottoms[i] &amp;lt;= 6&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>There are <code>n</code> dominoes in a line, and we place each domino vertically upright. In the beginning, we simultaneously push some of the dominoes either to the left or to the right.</p>
+      <content:encoded><![CDATA[<p>In a row of dominoes, <code>tops[i]</code> and <code>bottoms[i]</code> represent the top and bottom halves of the <code>i<sup>th</sup></code> domino. (A domino is a tile with two numbers from 1 to 6 - one on each half of the tile.)</p>
 
-<p>After each second, each domino that is falling to the left pushes the adjacent domino on the left. Similarly, the dominoes falling to the right push their adjacent dominoes standing on the right.</p>
+<p>We may rotate the <code>i<sup>th</sup></code> domino, so that <code>tops[i]</code> and <code>bottoms[i]</code> swap values.</p>
 
-<p>When a vertical domino has dominoes falling on it from both sides, it stays still due to the balance of the forces.</p>
+<p>Return the minimum number of rotations so that all the values in <code>tops</code> are the same, or all the values in <code>bottoms</code> are the same.</p>
 
-<p>For the purposes of this question, we will consider that a falling domino expends no additional force to a falling or already fallen domino.</p>
-
-<p>You are given a string <code>dominoes</code> representing the initial state where:</p>
-
-<ul>
-	<li><code>dominoes[i] = &#39;L&#39;</code>, if the <code>i<sup>th</sup></code> domino has been pushed to the left,</li>
-	<li><code>dominoes[i] = &#39;R&#39;</code>, if the <code>i<sup>th</sup></code> domino has been pushed to the right, and</li>
-	<li><code>dominoes[i] = &#39;.&#39;</code>, if the <code>i<sup>th</sup></code> domino has not been pushed.</li>
-</ul>
-
-<p>Return <em>a string representing the final state</em>.</p>
+<p>If it cannot be done, return <code>-1</code>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
-
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/14/domino.png" style="height: 300px; width: 421px;" />
 <pre>
-<strong>Input:</strong> dominoes = &quot;RR.L&quot;
-<strong>Output:</strong> &quot;RR.L&quot;
-<strong>Explanation:</strong> The first domino expends no additional force on the second domino.
+<strong>Input:</strong> tops = [2,1,2,4,2,2], bottoms = [5,2,6,2,3,2]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 
+The first figure represents the dominoes as given by tops and bottoms: before we do any rotations.
+If we rotate the second and fourth dominoes, we can make every value in the top row equal to 2, as indicated by the second figure.
 </pre>
 
 <p><strong class="example">Example 2:</strong></p>
-<img alt="" src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/05/18/domino.png" style="height: 196px; width: 512px;" />
+
 <pre>
-<strong>Input:</strong> dominoes = &quot;.L.R...LR..L..&quot;
-<strong>Output:</strong> &quot;LL.RR.LLRRLL..&quot;
+<strong>Input:</strong> tops = [3,5,1,2,3], bottoms = [3,6,3,3,4]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> 
+In this case, it is not possible to rotate the dominoes to make one row of values equal.
 </pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>n == dominoes.length</code></li>
-	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
-	<li><code>dominoes[i]</code> is either <code>&#39;L&#39;</code>, <code>&#39;R&#39;</code>, or <code>&#39;.&#39;</code>.</li>
+	<li><code>2 &lt;= tops.length &lt;= 2 * 10<sup>4</sup></code></li>
+	<li><code>bottoms.length == tops.length</code></li>
+	<li><code>1 &lt;= tops[i], bottoms[i] &lt;= 6</code></li>
 </ul>
 ]]></content:encoded>
-      <guid isPermaLink="false">push-dominoes</guid>
-      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">minimum-domino-rotations-for-equal-row</guid>
+      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
