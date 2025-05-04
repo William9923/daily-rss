@@ -8,86 +8,68 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 03 May 2025 02:43:10 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 May 2025 01:18:49 +0000</lastBuildDate>
     <item>
-      <title>Minimum Domino Rotations For Equal Row</title>
-      <link>https://leetcode.com/problems/minimum-domino-rotations-for-equal-row/</link>
-      <description>&lt;p&gt;In a row of dominoes, &lt;code&gt;tops[i]&lt;/code&gt; and &lt;code&gt;bottoms[i]&lt;/code&gt; represent the top and bottom halves of the &lt;code&gt;i&lt;sup&gt;th&lt;/sup&gt;&lt;/code&gt; domino. (A domino is a tile with two numbers from 1 to 6 - one on each half of the tile.)&lt;/p&gt;
+      <title>Number of Equivalent Domino Pairs</title>
+      <link>https://leetcode.com/problems/number-of-equivalent-domino-pairs/</link>
+      <description>&lt;p&gt;Given a list of &lt;code&gt;dominoes&lt;/code&gt;, &lt;code&gt;dominoes[i] = [a, b]&lt;/code&gt; is &lt;strong&gt;equivalent to&lt;/strong&gt; &lt;code&gt;dominoes[j] = [c, d]&lt;/code&gt; if and only if either (&lt;code&gt;a == c&lt;/code&gt; and &lt;code&gt;b == d&lt;/code&gt;), or (&lt;code&gt;a == d&lt;/code&gt; and &lt;code&gt;b == c&lt;/code&gt;) - that is, one domino can be rotated to be equal to another domino.&lt;/p&gt;
 
-&lt;p&gt;We may rotate the &lt;code&gt;i&lt;sup&gt;th&lt;/sup&gt;&lt;/code&gt; domino, so that &lt;code&gt;tops[i]&lt;/code&gt; and &lt;code&gt;bottoms[i]&lt;/code&gt; swap values.&lt;/p&gt;
-
-&lt;p&gt;Return the minimum number of rotations so that all the values in &lt;code&gt;tops&lt;/code&gt; are the same, or all the values in &lt;code&gt;bottoms&lt;/code&gt; are the same.&lt;/p&gt;
-
-&lt;p&gt;If it cannot be done, return &lt;code&gt;-1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Return &lt;em&gt;the number of pairs &lt;/em&gt;&lt;code&gt;(i, j)&lt;/code&gt;&lt;em&gt; for which &lt;/em&gt;&lt;code&gt;0 &amp;lt;= i &amp;lt; j &amp;lt; dominoes.length&lt;/code&gt;&lt;em&gt;, and &lt;/em&gt;&lt;code&gt;dominoes[i]&lt;/code&gt;&lt;em&gt; is &lt;strong&gt;equivalent to&lt;/strong&gt; &lt;/em&gt;&lt;code&gt;dominoes[j]&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;img alt="" src="https://assets.leetcode.com/uploads/2021/05/14/domino.png" style="height: 300px; width: 421px;" /&gt;
+
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; tops = [2,1,2,4,2,2], bottoms = [5,2,6,2,3,2]
-&lt;strong&gt;Output:&lt;/strong&gt; 2
-&lt;strong&gt;Explanation:&lt;/strong&gt; 
-The first figure represents the dominoes as given by tops and bottoms: before we do any rotations.
-If we rotate the second and fourth dominoes, we can make every value in the top row equal to 2, as indicated by the second figure.
+&lt;strong&gt;Input:&lt;/strong&gt; dominoes = [[1,2],[2,1],[3,4],[5,6]]
+&lt;strong&gt;Output:&lt;/strong&gt; 1
 &lt;/pre&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; tops = [3,5,1,2,3], bottoms = [3,6,3,3,4]
-&lt;strong&gt;Output:&lt;/strong&gt; -1
-&lt;strong&gt;Explanation:&lt;/strong&gt; 
-In this case, it is not possible to rotate the dominoes to make one row of values equal.
+&lt;strong&gt;Input:&lt;/strong&gt; dominoes = [[1,2],[1,2],[1,1],[1,2],[2,2]]
+&lt;strong&gt;Output:&lt;/strong&gt; 3
 &lt;/pre&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;2 &amp;lt;= tops.length &amp;lt;= 2 * 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;bottoms.length == tops.length&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= tops[i], bottoms[i] &amp;lt;= 6&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= dominoes.length &amp;lt;= 4 * 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;dominoes[i].length == 2&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= dominoes[i][j] &amp;lt;= 9&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>In a row of dominoes, <code>tops[i]</code> and <code>bottoms[i]</code> represent the top and bottom halves of the <code>i<sup>th</sup></code> domino. (A domino is a tile with two numbers from 1 to 6 - one on each half of the tile.)</p>
+      <content:encoded><![CDATA[<p>Given a list of <code>dominoes</code>, <code>dominoes[i] = [a, b]</code> is <strong>equivalent to</strong> <code>dominoes[j] = [c, d]</code> if and only if either (<code>a == c</code> and <code>b == d</code>), or (<code>a == d</code> and <code>b == c</code>) - that is, one domino can be rotated to be equal to another domino.</p>
 
-<p>We may rotate the <code>i<sup>th</sup></code> domino, so that <code>tops[i]</code> and <code>bottoms[i]</code> swap values.</p>
-
-<p>Return the minimum number of rotations so that all the values in <code>tops</code> are the same, or all the values in <code>bottoms</code> are the same.</p>
-
-<p>If it cannot be done, return <code>-1</code>.</p>
+<p>Return <em>the number of pairs </em><code>(i, j)</code><em> for which </em><code>0 &lt;= i &lt; j &lt; dominoes.length</code><em>, and </em><code>dominoes[i]</code><em> is <strong>equivalent to</strong> </em><code>dominoes[j]</code>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2021/05/14/domino.png" style="height: 300px; width: 421px;" />
+
 <pre>
-<strong>Input:</strong> tops = [2,1,2,4,2,2], bottoms = [5,2,6,2,3,2]
-<strong>Output:</strong> 2
-<strong>Explanation:</strong> 
-The first figure represents the dominoes as given by tops and bottoms: before we do any rotations.
-If we rotate the second and fourth dominoes, we can make every value in the top row equal to 2, as indicated by the second figure.
+<strong>Input:</strong> dominoes = [[1,2],[2,1],[3,4],[5,6]]
+<strong>Output:</strong> 1
 </pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> tops = [3,5,1,2,3], bottoms = [3,6,3,3,4]
-<strong>Output:</strong> -1
-<strong>Explanation:</strong> 
-In this case, it is not possible to rotate the dominoes to make one row of values equal.
+<strong>Input:</strong> dominoes = [[1,2],[1,2],[1,1],[1,2],[2,2]]
+<strong>Output:</strong> 3
 </pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>2 &lt;= tops.length &lt;= 2 * 10<sup>4</sup></code></li>
-	<li><code>bottoms.length == tops.length</code></li>
-	<li><code>1 &lt;= tops[i], bottoms[i] &lt;= 6</code></li>
+	<li><code>1 &lt;= dominoes.length &lt;= 4 * 10<sup>4</sup></code></li>
+	<li><code>dominoes[i].length == 2</code></li>
+	<li><code>1 &lt;= dominoes[i][j] &lt;= 9</code></li>
 </ul>
 ]]></content:encoded>
-      <guid isPermaLink="false">minimum-domino-rotations-for-equal-row</guid>
-      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">number-of-equivalent-domino-pairs</guid>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
