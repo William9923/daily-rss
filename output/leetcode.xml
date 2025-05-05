@@ -8,68 +8,70 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 May 2025 02:56:53 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 May 2025 01:15:18 +0000</lastBuildDate>
     <item>
-      <title>Number of Equivalent Domino Pairs</title>
-      <link>https://leetcode.com/problems/number-of-equivalent-domino-pairs/</link>
-      <description>&lt;p&gt;Given a list of &lt;code&gt;dominoes&lt;/code&gt;, &lt;code&gt;dominoes[i] = [a, b]&lt;/code&gt; is &lt;strong&gt;equivalent to&lt;/strong&gt; &lt;code&gt;dominoes[j] = [c, d]&lt;/code&gt; if and only if either (&lt;code&gt;a == c&lt;/code&gt; and &lt;code&gt;b == d&lt;/code&gt;), or (&lt;code&gt;a == d&lt;/code&gt; and &lt;code&gt;b == c&lt;/code&gt;) - that is, one domino can be rotated to be equal to another domino.&lt;/p&gt;
+      <title>Domino and Tromino Tiling</title>
+      <link>https://leetcode.com/problems/domino-and-tromino-tiling/</link>
+      <description>&lt;p&gt;You have two types of tiles: a &lt;code&gt;2 x 1&lt;/code&gt; domino shape and a tromino shape. You may rotate these shapes.&lt;/p&gt;
+&lt;img alt="" src="https://assets.leetcode.com/uploads/2021/07/15/lc-domino.jpg" style="width: 362px; height: 195px;" /&gt;
+&lt;p&gt;Given an integer n, return &lt;em&gt;the number of ways to tile an&lt;/em&gt; &lt;code&gt;2 x n&lt;/code&gt; &lt;em&gt;board&lt;/em&gt;. Since the answer may be very large, return it &lt;strong&gt;modulo&lt;/strong&gt; &lt;code&gt;10&lt;sup&gt;9&lt;/sup&gt; + 7&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Return &lt;em&gt;the number of pairs &lt;/em&gt;&lt;code&gt;(i, j)&lt;/code&gt;&lt;em&gt; for which &lt;/em&gt;&lt;code&gt;0 &amp;lt;= i &amp;lt; j &amp;lt; dominoes.length&lt;/code&gt;&lt;em&gt;, and &lt;/em&gt;&lt;code&gt;dominoes[i]&lt;/code&gt;&lt;em&gt; is &lt;strong&gt;equivalent to&lt;/strong&gt; &lt;/em&gt;&lt;code&gt;dominoes[j]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In a tiling, every square must be covered by a tile. Two tilings are different if and only if there are two 4-directionally adjacent cells on the board such that exactly one of the tilings has both squares occupied by a tile.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
-
+&lt;img alt="" src="https://assets.leetcode.com/uploads/2021/07/15/lc-domino1.jpg" style="width: 500px; height: 226px;" /&gt;
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; dominoes = [[1,2],[2,1],[3,4],[5,6]]
-&lt;strong&gt;Output:&lt;/strong&gt; 1
+&lt;strong&gt;Input:&lt;/strong&gt; n = 3
+&lt;strong&gt;Output:&lt;/strong&gt; 5
+&lt;strong&gt;Explanation:&lt;/strong&gt; The five different ways are show above.
 &lt;/pre&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; dominoes = [[1,2],[1,2],[1,1],[1,2],[2,2]]
-&lt;strong&gt;Output:&lt;/strong&gt; 3
+&lt;strong&gt;Input:&lt;/strong&gt; n = 1
+&lt;strong&gt;Output:&lt;/strong&gt; 1
 &lt;/pre&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= dominoes.length &amp;lt;= 4 * 10&lt;sup&gt;4&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;dominoes[i].length == 2&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= dominoes[i][j] &amp;lt;= 9&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>Given a list of <code>dominoes</code>, <code>dominoes[i] = [a, b]</code> is <strong>equivalent to</strong> <code>dominoes[j] = [c, d]</code> if and only if either (<code>a == c</code> and <code>b == d</code>), or (<code>a == d</code> and <code>b == c</code>) - that is, one domino can be rotated to be equal to another domino.</p>
+      <content:encoded><![CDATA[<p>You have two types of tiles: a <code>2 x 1</code> domino shape and a tromino shape. You may rotate these shapes.</p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/07/15/lc-domino.jpg" style="width: 362px; height: 195px;" />
+<p>Given an integer n, return <em>the number of ways to tile an</em> <code>2 x n</code> <em>board</em>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
 
-<p>Return <em>the number of pairs </em><code>(i, j)</code><em> for which </em><code>0 &lt;= i &lt; j &lt; dominoes.length</code><em>, and </em><code>dominoes[i]</code><em> is <strong>equivalent to</strong> </em><code>dominoes[j]</code>.</p>
+<p>In a tiling, every square must be covered by a tile. Two tilings are different if and only if there are two 4-directionally adjacent cells on the board such that exactly one of the tilings has both squares occupied by a tile.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
-
+<img alt="" src="https://assets.leetcode.com/uploads/2021/07/15/lc-domino1.jpg" style="width: 500px; height: 226px;" />
 <pre>
-<strong>Input:</strong> dominoes = [[1,2],[2,1],[3,4],[5,6]]
-<strong>Output:</strong> 1
+<strong>Input:</strong> n = 3
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> The five different ways are show above.
 </pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> dominoes = [[1,2],[1,2],[1,1],[1,2],[2,2]]
-<strong>Output:</strong> 3
+<strong>Input:</strong> n = 1
+<strong>Output:</strong> 1
 </pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>1 &lt;= dominoes.length &lt;= 4 * 10<sup>4</sup></code></li>
-	<li><code>dominoes[i].length == 2</code></li>
-	<li><code>1 &lt;= dominoes[i][j] &lt;= 9</code></li>
+	<li><code>1 &lt;= n &lt;= 1000</code></li>
 </ul>
 ]]></content:encoded>
-      <guid isPermaLink="false">number-of-equivalent-domino-pairs</guid>
-      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">domino-and-tromino-tiling</guid>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
