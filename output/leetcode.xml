@@ -8,70 +8,86 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 05 May 2025 02:52:38 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 May 2025 01:12:48 +0000</lastBuildDate>
     <item>
-      <title>Domino and Tromino Tiling</title>
-      <link>https://leetcode.com/problems/domino-and-tromino-tiling/</link>
-      <description>&lt;p&gt;You have two types of tiles: a &lt;code&gt;2 x 1&lt;/code&gt; domino shape and a tromino shape. You may rotate these shapes.&lt;/p&gt;
-&lt;img alt="" src="https://assets.leetcode.com/uploads/2021/07/15/lc-domino.jpg" style="width: 362px; height: 195px;" /&gt;
-&lt;p&gt;Given an integer n, return &lt;em&gt;the number of ways to tile an&lt;/em&gt; &lt;code&gt;2 x n&lt;/code&gt; &lt;em&gt;board&lt;/em&gt;. Since the answer may be very large, return it &lt;strong&gt;modulo&lt;/strong&gt; &lt;code&gt;10&lt;sup&gt;9&lt;/sup&gt; + 7&lt;/code&gt;.&lt;/p&gt;
+      <title>Build Array from Permutation</title>
+      <link>https://leetcode.com/problems/build-array-from-permutation/</link>
+      <description>&lt;p&gt;Given a &lt;strong&gt;zero-based permutation&lt;/strong&gt; &lt;code&gt;nums&lt;/code&gt; (&lt;strong&gt;0-indexed&lt;/strong&gt;), build an array &lt;code&gt;ans&lt;/code&gt; of the &lt;strong&gt;same length&lt;/strong&gt; where &lt;code&gt;ans[i] = nums[nums[i]]&lt;/code&gt; for each &lt;code&gt;0 &amp;lt;= i &amp;lt; nums.length&lt;/code&gt; and return it.&lt;/p&gt;
 
-&lt;p&gt;In a tiling, every square must be covered by a tile. Two tilings are different if and only if there are two 4-directionally adjacent cells on the board such that exactly one of the tilings has both squares occupied by a tile.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;zero-based permutation&lt;/strong&gt; &lt;code&gt;nums&lt;/code&gt; is an array of &lt;strong&gt;distinct&lt;/strong&gt; integers from &lt;code&gt;0&lt;/code&gt; to &lt;code&gt;nums.length - 1&lt;/code&gt; (&lt;strong&gt;inclusive&lt;/strong&gt;).&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;img alt="" src="https://assets.leetcode.com/uploads/2021/07/15/lc-domino1.jpg" style="width: 500px; height: 226px;" /&gt;
+
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; n = 3
-&lt;strong&gt;Output:&lt;/strong&gt; 5
-&lt;strong&gt;Explanation:&lt;/strong&gt; The five different ways are show above.
-&lt;/pre&gt;
+&lt;strong&gt;Input:&lt;/strong&gt; nums = [0,2,1,5,3,4]
+&lt;strong&gt;Output:&lt;/strong&gt; [0,1,2,4,5,3]&lt;strong&gt;
+Explanation:&lt;/strong&gt; The array ans is built as follows: 
+ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
+    = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]
+    = [0,1,2,4,5,3]&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; n = 1
-&lt;strong&gt;Output:&lt;/strong&gt; 1
-&lt;/pre&gt;
+&lt;strong&gt;Input:&lt;/strong&gt; nums = [5,0,1,2,3,4]
+&lt;strong&gt;Output:&lt;/strong&gt; [4,5,0,1,2,3]
+&lt;strong&gt;Explanation:&lt;/strong&gt; The array ans is built as follows:
+ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
+    = [nums[5], nums[0], nums[1], nums[2], nums[3], nums[4]]
+    = [4,5,0,1,2,3]&lt;/pre&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;0 &amp;lt;= nums[i] &amp;lt; nums.length&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;The elements in &lt;code&gt;nums&lt;/code&gt; are &lt;strong&gt;distinct&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-      <content:encoded><![CDATA[<p>You have two types of tiles: a <code>2 x 1</code> domino shape and a tromino shape. You may rotate these shapes.</p>
-<img alt="" src="https://assets.leetcode.com/uploads/2021/07/15/lc-domino.jpg" style="width: 362px; height: 195px;" />
-<p>Given an integer n, return <em>the number of ways to tile an</em> <code>2 x n</code> <em>board</em>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
 
-<p>In a tiling, every square must be covered by a tile. Two tilings are different if and only if there are two 4-directionally adjacent cells on the board such that exactly one of the tilings has both squares occupied by a tile.</p>
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up:&lt;/strong&gt; Can you solve it without using an extra space (i.e., &lt;code&gt;O(1)&lt;/code&gt; memory)?&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<p>Given a <strong>zero-based permutation</strong> <code>nums</code> (<strong>0-indexed</strong>), build an array <code>ans</code> of the <strong>same length</strong> where <code>ans[i] = nums[nums[i]]</code> for each <code>0 &lt;= i &lt; nums.length</code> and return it.</p>
+
+<p>A <strong>zero-based permutation</strong> <code>nums</code> is an array of <strong>distinct</strong> integers from <code>0</code> to <code>nums.length - 1</code> (<strong>inclusive</strong>).</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2021/07/15/lc-domino1.jpg" style="width: 500px; height: 226px;" />
+
 <pre>
-<strong>Input:</strong> n = 3
-<strong>Output:</strong> 5
-<strong>Explanation:</strong> The five different ways are show above.
-</pre>
+<strong>Input:</strong> nums = [0,2,1,5,3,4]
+<strong>Output:</strong> [0,1,2,4,5,3]<strong>
+Explanation:</strong> The array ans is built as follows: 
+ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
+    = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]
+    = [0,1,2,4,5,3]</pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> n = 1
-<strong>Output:</strong> 1
-</pre>
+<strong>Input:</strong> nums = [5,0,1,2,3,4]
+<strong>Output:</strong> [4,5,0,1,2,3]
+<strong>Explanation:</strong> The array ans is built as follows:
+ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
+    = [nums[5], nums[0], nums[1], nums[2], nums[3], nums[4]]
+    = [4,5,0,1,2,3]</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>1 &lt;= n &lt;= 1000</code></li>
+	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+	<li><code>0 &lt;= nums[i] &lt; nums.length</code></li>
+	<li>The elements in <code>nums</code> are <strong>distinct</strong>.</li>
 </ul>
+
+<p>&nbsp;</p>
+<p><strong>Follow-up:</strong> Can you solve it without using an extra space (i.e., <code>O(1)</code> memory)?</p>
 ]]></content:encoded>
-      <guid isPermaLink="false">domino-and-tromino-tiling</guid>
-      <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">build-array-from-permutation</guid>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
