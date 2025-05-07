@@ -8,86 +8,134 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 May 2025 02:48:32 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 May 2025 01:13:02 +0000</lastBuildDate>
     <item>
-      <title>Build Array from Permutation</title>
-      <link>https://leetcode.com/problems/build-array-from-permutation/</link>
-      <description>&lt;p&gt;Given a &lt;strong&gt;zero-based permutation&lt;/strong&gt; &lt;code&gt;nums&lt;/code&gt; (&lt;strong&gt;0-indexed&lt;/strong&gt;), build an array &lt;code&gt;ans&lt;/code&gt; of the &lt;strong&gt;same length&lt;/strong&gt; where &lt;code&gt;ans[i] = nums[nums[i]]&lt;/code&gt; for each &lt;code&gt;0 &amp;lt;= i &amp;lt; nums.length&lt;/code&gt; and return it.&lt;/p&gt;
+      <title>Find Minimum Time to Reach Last Room I</title>
+      <link>https://leetcode.com/problems/find-minimum-time-to-reach-last-room-i/</link>
+      <description>&lt;p&gt;There is a dungeon with &lt;code&gt;n x m&lt;/code&gt; rooms arranged as a grid.&lt;/p&gt;
 
-&lt;p&gt;A &lt;strong&gt;zero-based permutation&lt;/strong&gt; &lt;code&gt;nums&lt;/code&gt; is an array of &lt;strong&gt;distinct&lt;/strong&gt; integers from &lt;code&gt;0&lt;/code&gt; to &lt;code&gt;nums.length - 1&lt;/code&gt; (&lt;strong&gt;inclusive&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;You are given a 2D array &lt;code&gt;moveTime&lt;/code&gt; of size &lt;code&gt;n x m&lt;/code&gt;, where &lt;code&gt;moveTime[i][j]&lt;/code&gt; represents the &lt;strong&gt;minimum&lt;/strong&gt; time in seconds when you can &lt;strong&gt;start moving&lt;/strong&gt; to that room. You start from the room &lt;code&gt;(0, 0)&lt;/code&gt; at time &lt;code&gt;t = 0&lt;/code&gt; and can move to an &lt;strong&gt;adjacent&lt;/strong&gt; room. Moving between adjacent rooms takes &lt;em&gt;exactly&lt;/em&gt; one second.&lt;/p&gt;
+
+&lt;p&gt;Return the &lt;strong&gt;minimum&lt;/strong&gt; time to reach the room &lt;code&gt;(n - 1, m - 1)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Two rooms are &lt;strong&gt;adjacent&lt;/strong&gt; if they share a common wall, either &lt;em&gt;horizontally&lt;/em&gt; or &lt;em&gt;vertically&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; nums = [0,2,1,5,3,4]
-&lt;strong&gt;Output:&lt;/strong&gt; [0,1,2,4,5,3]&lt;strong&gt;
-Explanation:&lt;/strong&gt; The array ans is built as follows: 
-ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
-    = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]
-    = [0,1,2,4,5,3]&lt;/pre&gt;
+&lt;div class="example-block"&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io"&gt;moveTime = [[0,4],[4,4]]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io"&gt;6&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The minimum time required is 6 seconds.&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;At time &lt;code&gt;t == 4&lt;/code&gt;, move from room &lt;code&gt;(0, 0)&lt;/code&gt; to room &lt;code&gt;(1, 0)&lt;/code&gt; in one second.&lt;/li&gt;
+	&lt;li&gt;At time &lt;code&gt;t == 5&lt;/code&gt;, move from room &lt;code&gt;(1, 0)&lt;/code&gt; to room &lt;code&gt;(1, 1)&lt;/code&gt; in one second.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; nums = [5,0,1,2,3,4]
-&lt;strong&gt;Output:&lt;/strong&gt; [4,5,0,1,2,3]
-&lt;strong&gt;Explanation:&lt;/strong&gt; The array ans is built as follows:
-ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
-    = [nums[5], nums[0], nums[1], nums[2], nums[3], nums[4]]
-    = [4,5,0,1,2,3]&lt;/pre&gt;
+&lt;div class="example-block"&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io"&gt;moveTime = [[0,0,0],[0,0,0]]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io"&gt;3&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The minimum time required is 3 seconds.&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;At time &lt;code&gt;t == 0&lt;/code&gt;, move from room &lt;code&gt;(0, 0)&lt;/code&gt; to room &lt;code&gt;(1, 0)&lt;/code&gt; in one second.&lt;/li&gt;
+	&lt;li&gt;At time &lt;code&gt;t == 1&lt;/code&gt;, move from room &lt;code&gt;(1, 0)&lt;/code&gt; to room &lt;code&gt;(1, 1)&lt;/code&gt; in one second.&lt;/li&gt;
+	&lt;li&gt;At time &lt;code&gt;t == 2&lt;/code&gt;, move from room &lt;code&gt;(1, 1)&lt;/code&gt; to room &lt;code&gt;(1, 2)&lt;/code&gt; in one second.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong class="example"&gt;Example 3:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class="example-block"&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io"&gt;moveTime = [[0,1],[1,2]]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io"&gt;3&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;0 &amp;lt;= nums[i] &amp;lt; nums.length&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;The elements in &lt;code&gt;nums&lt;/code&gt; are &lt;strong&gt;distinct&lt;/strong&gt;.&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;2 &amp;lt;= n == moveTime.length &amp;lt;= 50&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;2 &amp;lt;= m == moveTime[i].length &amp;lt;= 50&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;0 &amp;lt;= moveTime[i][j] &amp;lt;= 10&lt;sup&gt;9&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Follow-up:&lt;/strong&gt; Can you solve it without using an extra space (i.e., &lt;code&gt;O(1)&lt;/code&gt; memory)?&lt;/p&gt;
 </description>
-      <content:encoded><![CDATA[<p>Given a <strong>zero-based permutation</strong> <code>nums</code> (<strong>0-indexed</strong>), build an array <code>ans</code> of the <strong>same length</strong> where <code>ans[i] = nums[nums[i]]</code> for each <code>0 &lt;= i &lt; nums.length</code> and return it.</p>
+      <content:encoded><![CDATA[<p>There is a dungeon with <code>n x m</code> rooms arranged as a grid.</p>
 
-<p>A <strong>zero-based permutation</strong> <code>nums</code> is an array of <strong>distinct</strong> integers from <code>0</code> to <code>nums.length - 1</code> (<strong>inclusive</strong>).</p>
+<p>You are given a 2D array <code>moveTime</code> of size <code>n x m</code>, where <code>moveTime[i][j]</code> represents the <strong>minimum</strong> time in seconds when you can <strong>start moving</strong> to that room. You start from the room <code>(0, 0)</code> at time <code>t = 0</code> and can move to an <strong>adjacent</strong> room. Moving between adjacent rooms takes <em>exactly</em> one second.</p>
+
+<p>Return the <strong>minimum</strong> time to reach the room <code>(n - 1, m - 1)</code>.</p>
+
+<p>Two rooms are <strong>adjacent</strong> if they share a common wall, either <em>horizontally</em> or <em>vertically</em>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre>
-<strong>Input:</strong> nums = [0,2,1,5,3,4]
-<strong>Output:</strong> [0,1,2,4,5,3]<strong>
-Explanation:</strong> The array ans is built as follows: 
-ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
-    = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]
-    = [0,1,2,4,5,3]</pre>
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">moveTime = [[0,4],[4,4]]</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">6</span></p>
+
+<p><strong>Explanation:</strong></p>
+
+<p>The minimum time required is 6 seconds.</p>
+
+<ul>
+	<li>At time <code>t == 4</code>, move from room <code>(0, 0)</code> to room <code>(1, 0)</code> in one second.</li>
+	<li>At time <code>t == 5</code>, move from room <code>(1, 0)</code> to room <code>(1, 1)</code> in one second.</li>
+</ul>
+</div>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre>
-<strong>Input:</strong> nums = [5,0,1,2,3,4]
-<strong>Output:</strong> [4,5,0,1,2,3]
-<strong>Explanation:</strong> The array ans is built as follows:
-ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
-    = [nums[5], nums[0], nums[1], nums[2], nums[3], nums[4]]
-    = [4,5,0,1,2,3]</pre>
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">moveTime = [[0,0,0],[0,0,0]]</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">3</span></p>
+
+<p><strong>Explanation:</strong></p>
+
+<p>The minimum time required is 3 seconds.</p>
+
+<ul>
+	<li>At time <code>t == 0</code>, move from room <code>(0, 0)</code> to room <code>(1, 0)</code> in one second.</li>
+	<li>At time <code>t == 1</code>, move from room <code>(1, 0)</code> to room <code>(1, 1)</code> in one second.</li>
+	<li>At time <code>t == 2</code>, move from room <code>(1, 1)</code> to room <code>(1, 2)</code> in one second.</li>
+</ul>
+</div>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">moveTime = [[0,1],[1,2]]</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">3</span></p>
+</div>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
-	<li><code>0 &lt;= nums[i] &lt; nums.length</code></li>
-	<li>The elements in <code>nums</code> are <strong>distinct</strong>.</li>
+	<li><code>2 &lt;= n == moveTime.length &lt;= 50</code></li>
+	<li><code>2 &lt;= m == moveTime[i].length &lt;= 50</code></li>
+	<li><code>0 &lt;= moveTime[i][j] &lt;= 10<sup>9</sup></code></li>
 </ul>
-
-<p>&nbsp;</p>
-<p><strong>Follow-up:</strong> Can you solve it without using an extra space (i.e., <code>O(1)</code> memory)?</p>
 ]]></content:encoded>
-      <guid isPermaLink="false">build-array-from-permutation</guid>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">find-minimum-time-to-reach-last-room-i</guid>
+      <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
