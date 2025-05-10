@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 May 2025 01:10:28 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 May 2025 02:42:27 +0000</lastBuildDate>
     <item>
       <title>Minimum Equal Sum of Two Arrays After Replacing Zeros</title>
       <link>https://leetcode.com/problems/minimum-equal-sum-of-two-arrays-after-replacing-zeros/</link>
