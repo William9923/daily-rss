@@ -8,64 +8,110 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 11 May 2025 02:54:43 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 May 2025 01:15:46 +0000</lastBuildDate>
     <item>
-      <title>Three Consecutive Odds</title>
-      <link>https://leetcode.com/problems/three-consecutive-odds/</link>
-      <description>Given an integer array &lt;code&gt;arr&lt;/code&gt;, return &lt;code&gt;true&lt;/code&gt;&amp;nbsp;if there are three consecutive odd numbers in the array. Otherwise, return&amp;nbsp;&lt;code&gt;false&lt;/code&gt;.
+      <title>Finding 3-Digit Even Numbers</title>
+      <link>https://leetcode.com/problems/finding-3-digit-even-numbers/</link>
+      <description>&lt;p&gt;You are given an integer array &lt;code&gt;digits&lt;/code&gt;, where each element is a digit. The array may contain duplicates.&lt;/p&gt;
+
+&lt;p&gt;You need to find &lt;strong&gt;all&lt;/strong&gt; the &lt;strong&gt;unique&lt;/strong&gt; integers that follow the given requirements:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;The integer consists of the &lt;strong&gt;concatenation&lt;/strong&gt; of &lt;strong&gt;three&lt;/strong&gt; elements from &lt;code&gt;digits&lt;/code&gt; in &lt;strong&gt;any&lt;/strong&gt; arbitrary order.&lt;/li&gt;
+	&lt;li&gt;The integer does not have &lt;strong&gt;leading zeros&lt;/strong&gt;.&lt;/li&gt;
+	&lt;li&gt;The integer is &lt;strong&gt;even&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, if the given &lt;code&gt;digits&lt;/code&gt; were &lt;code&gt;[1, 2, 3]&lt;/code&gt;, integers &lt;code&gt;132&lt;/code&gt; and &lt;code&gt;312&lt;/code&gt; follow the requirements.&lt;/p&gt;
+
+&lt;p&gt;Return &lt;em&gt;a &lt;strong&gt;sorted&lt;/strong&gt; array of the unique integers.&lt;/em&gt;&lt;/p&gt;
+
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; arr = [2,6,4,1]
-&lt;strong&gt;Output:&lt;/strong&gt; false
-&lt;b&gt;Explanation:&lt;/b&gt; There are no three consecutive odds.
+&lt;strong&gt;Input:&lt;/strong&gt; digits = [2,1,3,0]
+&lt;strong&gt;Output:&lt;/strong&gt; [102,120,130,132,210,230,302,310,312,320]
+&lt;strong&gt;Explanation:&lt;/strong&gt; All the possible integers that follow the requirements are in the output array. 
+Notice that there are no &lt;strong&gt;odd&lt;/strong&gt; integers or integers with &lt;strong&gt;leading zeros&lt;/strong&gt;.
 &lt;/pre&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; arr = [1,2,34,3,4,5,7,23,12]
-&lt;strong&gt;Output:&lt;/strong&gt; true
-&lt;b&gt;Explanation:&lt;/b&gt; [5,7,23] are three consecutive odds.
+&lt;strong&gt;Input:&lt;/strong&gt; digits = [2,2,8,8,2]
+&lt;strong&gt;Output:&lt;/strong&gt; [222,228,282,288,822,828,882]
+&lt;strong&gt;Explanation:&lt;/strong&gt; The same digit can be used as many times as it appears in digits. 
+In this example, the digit 8 is used twice each time in 288, 828, and 882. 
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong class="example"&gt;Example 3:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;strong&gt;Input:&lt;/strong&gt; digits = [3,7,5]
+&lt;strong&gt;Output:&lt;/strong&gt; []
+&lt;strong&gt;Explanation:&lt;/strong&gt; No &lt;strong&gt;even&lt;/strong&gt; integers can be formed using the given digits.
 &lt;/pre&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= arr.length &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= arr[i] &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;3 &amp;lt;= digits.length &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;0 &amp;lt;= digits[i] &amp;lt;= 9&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[Given an integer array <code>arr</code>, return <code>true</code>&nbsp;if there are three consecutive odd numbers in the array. Otherwise, return&nbsp;<code>false</code>.
+      <content:encoded><![CDATA[<p>You are given an integer array <code>digits</code>, where each element is a digit. The array may contain duplicates.</p>
+
+<p>You need to find <strong>all</strong> the <strong>unique</strong> integers that follow the given requirements:</p>
+
+<ul>
+	<li>The integer consists of the <strong>concatenation</strong> of <strong>three</strong> elements from <code>digits</code> in <strong>any</strong> arbitrary order.</li>
+	<li>The integer does not have <strong>leading zeros</strong>.</li>
+	<li>The integer is <strong>even</strong>.</li>
+</ul>
+
+<p>For example, if the given <code>digits</code> were <code>[1, 2, 3]</code>, integers <code>132</code> and <code>312</code> follow the requirements.</p>
+
+<p>Return <em>a <strong>sorted</strong> array of the unique integers.</em></p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
 <pre>
-<strong>Input:</strong> arr = [2,6,4,1]
-<strong>Output:</strong> false
-<b>Explanation:</b> There are no three consecutive odds.
+<strong>Input:</strong> digits = [2,1,3,0]
+<strong>Output:</strong> [102,120,130,132,210,230,302,310,312,320]
+<strong>Explanation:</strong> All the possible integers that follow the requirements are in the output array. 
+Notice that there are no <strong>odd</strong> integers or integers with <strong>leading zeros</strong>.
 </pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> arr = [1,2,34,3,4,5,7,23,12]
-<strong>Output:</strong> true
-<b>Explanation:</b> [5,7,23] are three consecutive odds.
+<strong>Input:</strong> digits = [2,2,8,8,2]
+<strong>Output:</strong> [222,228,282,288,822,828,882]
+<strong>Explanation:</strong> The same digit can be used as many times as it appears in digits. 
+In this example, the digit 8 is used twice each time in 288, 828, and 882. 
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre>
+<strong>Input:</strong> digits = [3,7,5]
+<strong>Output:</strong> []
+<strong>Explanation:</strong> No <strong>even</strong> integers can be formed using the given digits.
 </pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>1 &lt;= arr.length &lt;= 1000</code></li>
-	<li><code>1 &lt;= arr[i] &lt;= 1000</code></li>
+	<li><code>3 &lt;= digits.length &lt;= 100</code></li>
+	<li><code>0 &lt;= digits[i] &lt;= 9</code></li>
 </ul>
 ]]></content:encoded>
-      <guid isPermaLink="false">three-consecutive-odds</guid>
-      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">finding-3-digit-even-numbers</guid>
+      <pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
