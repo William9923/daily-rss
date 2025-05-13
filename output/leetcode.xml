@@ -8,110 +8,172 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 12 May 2025 02:53:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 May 2025 01:14:17 +0000</lastBuildDate>
     <item>
-      <title>Finding 3-Digit Even Numbers</title>
-      <link>https://leetcode.com/problems/finding-3-digit-even-numbers/</link>
-      <description>&lt;p&gt;You are given an integer array &lt;code&gt;digits&lt;/code&gt;, where each element is a digit. The array may contain duplicates.&lt;/p&gt;
-
-&lt;p&gt;You need to find &lt;strong&gt;all&lt;/strong&gt; the &lt;strong&gt;unique&lt;/strong&gt; integers that follow the given requirements:&lt;/p&gt;
+      <title>Total Characters in String After Transformations I</title>
+      <link>https://leetcode.com/problems/total-characters-in-string-after-transformations-i/</link>
+      <description>&lt;p&gt;You are given a string &lt;code&gt;s&lt;/code&gt; and an integer &lt;code&gt;t&lt;/code&gt;, representing the number of &lt;strong&gt;transformations&lt;/strong&gt; to perform. In one &lt;strong&gt;transformation&lt;/strong&gt;, every character in &lt;code&gt;s&lt;/code&gt; is replaced according to the following rules:&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;The integer consists of the &lt;strong&gt;concatenation&lt;/strong&gt; of &lt;strong&gt;three&lt;/strong&gt; elements from &lt;code&gt;digits&lt;/code&gt; in &lt;strong&gt;any&lt;/strong&gt; arbitrary order.&lt;/li&gt;
-	&lt;li&gt;The integer does not have &lt;strong&gt;leading zeros&lt;/strong&gt;.&lt;/li&gt;
-	&lt;li&gt;The integer is &lt;strong&gt;even&lt;/strong&gt;.&lt;/li&gt;
+	&lt;li&gt;If the character is &lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt;, replace it with the string &lt;code&gt;&amp;quot;ab&amp;quot;&lt;/code&gt;.&lt;/li&gt;
+	&lt;li&gt;Otherwise, replace it with the &lt;strong&gt;next&lt;/strong&gt; character in the alphabet. For example, &lt;code&gt;&amp;#39;a&amp;#39;&lt;/code&gt; is replaced with &lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt;, &lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt; is replaced with &lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt;, and so on.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For example, if the given &lt;code&gt;digits&lt;/code&gt; were &lt;code&gt;[1, 2, 3]&lt;/code&gt;, integers &lt;code&gt;132&lt;/code&gt; and &lt;code&gt;312&lt;/code&gt; follow the requirements.&lt;/p&gt;
+&lt;p&gt;Return the &lt;strong&gt;length&lt;/strong&gt; of the resulting string after &lt;strong&gt;exactly&lt;/strong&gt; &lt;code&gt;t&lt;/code&gt; transformations.&lt;/p&gt;
 
-&lt;p&gt;Return &lt;em&gt;a &lt;strong&gt;sorted&lt;/strong&gt; array of the unique integers.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Since the answer may be very large, return it &lt;strong&gt;modulo&lt;/strong&gt;&lt;!-- notionvc: eb142f2b-b818-4064-8be5-e5a36b07557a --&gt; &lt;code&gt;10&lt;sup&gt;9&lt;/sup&gt; + 7&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; digits = [2,1,3,0]
-&lt;strong&gt;Output:&lt;/strong&gt; [102,120,130,132,210,230,302,310,312,320]
-&lt;strong&gt;Explanation:&lt;/strong&gt; All the possible integers that follow the requirements are in the output array. 
-Notice that there are no &lt;strong&gt;odd&lt;/strong&gt; integers or integers with &lt;strong&gt;leading zeros&lt;/strong&gt;.
-&lt;/pre&gt;
+&lt;div class="example-block"&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io"&gt;s = &amp;quot;abcyy&amp;quot;, t = 2&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io"&gt;7&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;First Transformation (t = 1)&lt;/strong&gt;:
+
+	&lt;ul&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;a&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;d&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;y&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;y&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;String after the first transformation: &lt;code&gt;&amp;quot;bcdzz&amp;quot;&lt;/code&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Second Transformation (t = 2)&lt;/strong&gt;:
+	&lt;ul&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;d&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;d&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;e&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;quot;ab&amp;quot;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;quot;ab&amp;quot;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;String after the second transformation: &lt;code&gt;&amp;quot;cdeabab&amp;quot;&lt;/code&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Final Length of the string&lt;/strong&gt;: The string is &lt;code&gt;&amp;quot;cdeabab&amp;quot;&lt;/code&gt;, which has 7 characters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; digits = [2,2,8,8,2]
-&lt;strong&gt;Output:&lt;/strong&gt; [222,228,282,288,822,828,882]
-&lt;strong&gt;Explanation:&lt;/strong&gt; The same digit can be used as many times as it appears in digits. 
-In this example, the digit 8 is used twice each time in 288, 828, and 882. 
-&lt;/pre&gt;
+&lt;div class="example-block"&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io"&gt;s = &amp;quot;azbk&amp;quot;, t = 1&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong class="example"&gt;Example 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io"&gt;5&lt;/span&gt;&lt;/p&gt;
 
-&lt;pre&gt;
-&lt;strong&gt;Input:&lt;/strong&gt; digits = [3,7,5]
-&lt;strong&gt;Output:&lt;/strong&gt; []
-&lt;strong&gt;Explanation:&lt;/strong&gt; No &lt;strong&gt;even&lt;/strong&gt; integers can be formed using the given digits.
-&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;First Transformation (t = 1)&lt;/strong&gt;:
+
+	&lt;ul&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;a&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;quot;ab&amp;quot;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;&amp;#39;k&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;l&amp;#39;&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;String after the first transformation: &lt;code&gt;&amp;quot;babcl&amp;quot;&lt;/code&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Final Length of the string&lt;/strong&gt;: The string is &lt;code&gt;&amp;quot;babcl&amp;quot;&lt;/code&gt;, which has 5 characters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;3 &amp;lt;= digits.length &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;0 &amp;lt;= digits[i] &amp;lt;= 9&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= s.length &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;s&lt;/code&gt; consists only of lowercase English letters.&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= t &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>You are given an integer array <code>digits</code>, where each element is a digit. The array may contain duplicates.</p>
-
-<p>You need to find <strong>all</strong> the <strong>unique</strong> integers that follow the given requirements:</p>
+      <content:encoded><![CDATA[<p>You are given a string <code>s</code> and an integer <code>t</code>, representing the number of <strong>transformations</strong> to perform. In one <strong>transformation</strong>, every character in <code>s</code> is replaced according to the following rules:</p>
 
 <ul>
-	<li>The integer consists of the <strong>concatenation</strong> of <strong>three</strong> elements from <code>digits</code> in <strong>any</strong> arbitrary order.</li>
-	<li>The integer does not have <strong>leading zeros</strong>.</li>
-	<li>The integer is <strong>even</strong>.</li>
+	<li>If the character is <code>&#39;z&#39;</code>, replace it with the string <code>&quot;ab&quot;</code>.</li>
+	<li>Otherwise, replace it with the <strong>next</strong> character in the alphabet. For example, <code>&#39;a&#39;</code> is replaced with <code>&#39;b&#39;</code>, <code>&#39;b&#39;</code> is replaced with <code>&#39;c&#39;</code>, and so on.</li>
 </ul>
 
-<p>For example, if the given <code>digits</code> were <code>[1, 2, 3]</code>, integers <code>132</code> and <code>312</code> follow the requirements.</p>
+<p>Return the <strong>length</strong> of the resulting string after <strong>exactly</strong> <code>t</code> transformations.</p>
 
-<p>Return <em>a <strong>sorted</strong> array of the unique integers.</em></p>
+<p>Since the answer may be very large, return it <strong>modulo</strong><!-- notionvc: eb142f2b-b818-4064-8be5-e5a36b07557a --> <code>10<sup>9</sup> + 7</code>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre>
-<strong>Input:</strong> digits = [2,1,3,0]
-<strong>Output:</strong> [102,120,130,132,210,230,302,310,312,320]
-<strong>Explanation:</strong> All the possible integers that follow the requirements are in the output array. 
-Notice that there are no <strong>odd</strong> integers or integers with <strong>leading zeros</strong>.
-</pre>
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = &quot;abcyy&quot;, t = 2</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">7</span></p>
+
+<p><strong>Explanation:</strong></p>
+
+<ul>
+	<li><strong>First Transformation (t = 1)</strong>:
+
+	<ul>
+		<li><code>&#39;a&#39;</code> becomes <code>&#39;b&#39;</code></li>
+		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code></li>
+		<li><code>&#39;c&#39;</code> becomes <code>&#39;d&#39;</code></li>
+		<li><code>&#39;y&#39;</code> becomes <code>&#39;z&#39;</code></li>
+		<li><code>&#39;y&#39;</code> becomes <code>&#39;z&#39;</code></li>
+		<li>String after the first transformation: <code>&quot;bcdzz&quot;</code></li>
+	</ul>
+	</li>
+	<li><strong>Second Transformation (t = 2)</strong>:
+	<ul>
+		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code></li>
+		<li><code>&#39;c&#39;</code> becomes <code>&#39;d&#39;</code></li>
+		<li><code>&#39;d&#39;</code> becomes <code>&#39;e&#39;</code></li>
+		<li><code>&#39;z&#39;</code> becomes <code>&quot;ab&quot;</code></li>
+		<li><code>&#39;z&#39;</code> becomes <code>&quot;ab&quot;</code></li>
+		<li>String after the second transformation: <code>&quot;cdeabab&quot;</code></li>
+	</ul>
+	</li>
+	<li><strong>Final Length of the string</strong>: The string is <code>&quot;cdeabab&quot;</code>, which has 7 characters.</li>
+</ul>
+</div>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre>
-<strong>Input:</strong> digits = [2,2,8,8,2]
-<strong>Output:</strong> [222,228,282,288,822,828,882]
-<strong>Explanation:</strong> The same digit can be used as many times as it appears in digits. 
-In this example, the digit 8 is used twice each time in 288, 828, and 882. 
-</pre>
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = &quot;azbk&quot;, t = 1</span></p>
 
-<p><strong class="example">Example 3:</strong></p>
+<p><strong>Output:</strong> <span class="example-io">5</span></p>
 
-<pre>
-<strong>Input:</strong> digits = [3,7,5]
-<strong>Output:</strong> []
-<strong>Explanation:</strong> No <strong>even</strong> integers can be formed using the given digits.
-</pre>
+<p><strong>Explanation:</strong></p>
+
+<ul>
+	<li><strong>First Transformation (t = 1)</strong>:
+
+	<ul>
+		<li><code>&#39;a&#39;</code> becomes <code>&#39;b&#39;</code></li>
+		<li><code>&#39;z&#39;</code> becomes <code>&quot;ab&quot;</code></li>
+		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code></li>
+		<li><code>&#39;k&#39;</code> becomes <code>&#39;l&#39;</code></li>
+		<li>String after the first transformation: <code>&quot;babcl&quot;</code></li>
+	</ul>
+	</li>
+	<li><strong>Final Length of the string</strong>: The string is <code>&quot;babcl&quot;</code>, which has 5 characters.</li>
+</ul>
+</div>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>3 &lt;= digits.length &lt;= 100</code></li>
-	<li><code>0 &lt;= digits[i] &lt;= 9</code></li>
+	<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+	<li><code>s</code> consists only of lowercase English letters.</li>
+	<li><code>1 &lt;= t &lt;= 10<sup>5</sup></code></li>
 </ul>
 ]]></content:encoded>
-      <guid isPermaLink="false">finding-3-digit-even-numbers</guid>
-      <pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">total-characters-in-string-after-transformations-i</guid>
+      <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
