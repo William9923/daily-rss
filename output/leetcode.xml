@@ -8,192 +8,156 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 14 May 2025 02:50:06 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 May 2025 01:11:08 +0000</lastBuildDate>
     <item>
-      <title>Total Characters in String After Transformations II</title>
-      <link>https://leetcode.com/problems/total-characters-in-string-after-transformations-ii/</link>
-      <description>&lt;p&gt;You are given a string &lt;code&gt;s&lt;/code&gt; consisting of lowercase English letters, an integer &lt;code&gt;t&lt;/code&gt; representing the number of &lt;strong&gt;transformations&lt;/strong&gt; to perform, and an array &lt;code&gt;nums&lt;/code&gt; of size 26. In one &lt;strong&gt;transformation&lt;/strong&gt;, every character in &lt;code&gt;s&lt;/code&gt; is replaced according to the following rules:&lt;/p&gt;
+      <title>Longest Unequal Adjacent Groups Subsequence I</title>
+      <link>https://leetcode.com/problems/longest-unequal-adjacent-groups-subsequence-i/</link>
+      <description>&lt;p&gt;You are given a string array &lt;code&gt;words&lt;/code&gt; and a &lt;strong&gt;binary&lt;/strong&gt; array &lt;code&gt;groups&lt;/code&gt; both of length &lt;code&gt;n&lt;/code&gt;, where &lt;code&gt;words[i]&lt;/code&gt; is associated with &lt;code&gt;groups[i]&lt;/code&gt;.&lt;/p&gt;
 
-&lt;ul&gt;
-	&lt;li&gt;Replace &lt;code&gt;s[i]&lt;/code&gt; with the &lt;strong&gt;next&lt;/strong&gt; &lt;code&gt;nums[s[i] - &amp;#39;a&amp;#39;]&lt;/code&gt; consecutive characters in the alphabet. For example, if &lt;code&gt;s[i] = &amp;#39;a&amp;#39;&lt;/code&gt; and &lt;code&gt;nums[0] = 3&lt;/code&gt;, the character &lt;code&gt;&amp;#39;a&amp;#39;&lt;/code&gt; transforms into the next 3 consecutive characters ahead of it, which results in &lt;code&gt;&amp;quot;bcd&amp;quot;&lt;/code&gt;.&lt;/li&gt;
-	&lt;li&gt;The transformation &lt;strong&gt;wraps&lt;/strong&gt; around the alphabet if it exceeds &lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt;. For example, if &lt;code&gt;s[i] = &amp;#39;y&amp;#39;&lt;/code&gt; and &lt;code&gt;nums[24] = 3&lt;/code&gt;, the character &lt;code&gt;&amp;#39;y&amp;#39;&lt;/code&gt; transforms into the next 3 consecutive characters ahead of it, which results in &lt;code&gt;&amp;quot;zab&amp;quot;&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Your task is to select the &lt;strong&gt;longest alternating&lt;/strong&gt; &lt;span data-keyword="subsequence-array"&gt;subsequence&lt;/span&gt; from &lt;code&gt;words&lt;/code&gt;. A subsequence of &lt;code&gt;words&lt;/code&gt; is alternating if for any two consecutive strings in the sequence, their corresponding elements in the binary array &lt;code&gt;groups&lt;/code&gt; differ. Essentially, you are to choose strings such that adjacent elements have non-matching corresponding bits in the &lt;code&gt;groups&lt;/code&gt; array.&lt;/p&gt;
 
-&lt;p&gt;Return the length of the resulting string after &lt;strong&gt;exactly&lt;/strong&gt; &lt;code&gt;t&lt;/code&gt; transformations.&lt;/p&gt;
+&lt;p&gt;Formally, you need to find the longest subsequence of an array of indices &lt;code&gt;[0, 1, ..., n - 1]&lt;/code&gt; denoted as &lt;code&gt;[i&lt;sub&gt;0&lt;/sub&gt;, i&lt;sub&gt;1&lt;/sub&gt;, ..., i&lt;sub&gt;k-1&lt;/sub&gt;]&lt;/code&gt;, such that &lt;code&gt;groups[i&lt;sub&gt;j&lt;/sub&gt;] != groups[i&lt;sub&gt;j+1&lt;/sub&gt;]&lt;/code&gt; for each &lt;code&gt;0 &amp;lt;= j &amp;lt; k - 1&lt;/code&gt; and then find the words corresponding to these indices.&lt;/p&gt;
 
-&lt;p&gt;Since the answer may be very large, return it &lt;strong&gt;modulo&lt;/strong&gt; &lt;code&gt;10&lt;sup&gt;9&lt;/sup&gt; + 7&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Return &lt;em&gt;the selected subsequence. If there are multiple answers, return &lt;strong&gt;any&lt;/strong&gt; of them.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The elements in &lt;code&gt;words&lt;/code&gt; are distinct.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class="example-block"&gt;
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io"&gt;s = &amp;quot;abcyy&amp;quot;, t = 2, nums = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2]&lt;/span&gt;&lt;/p&gt;
+&lt;div class="example-block" style="
+    border-color: var(--border-tertiary);
+    border-left-width: 2px;
+    color: var(--text-secondary);
+    font-size: .875rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    overflow: visible;
+    padding-left: 1rem;
+"&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io" style="
+    font-family: Menlo,sans-serif;
+    font-size: 0.85rem;
+"&gt;words = [&amp;quot;e&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;], groups = [0,0,1]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io"&gt;7&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io" style="
+    font-family: Menlo,sans-serif;
+    font-size: 0.85rem;
+"&gt;[&amp;quot;e&amp;quot;,&amp;quot;b&amp;quot;]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;strong&gt;First Transformation (t = 1):&lt;/strong&gt;&lt;/p&gt;
-
-	&lt;ul&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;a&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[0] == 1&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[1] == 1&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;d&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[2] == 1&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;y&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[24] == 1&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;y&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[24] == 1&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;String after the first transformation: &lt;code&gt;&amp;quot;bcdzz&amp;quot;&lt;/code&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;strong&gt;Second Transformation (t = 2):&lt;/strong&gt;&lt;/p&gt;
-
-	&lt;ul&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[1] == 1&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;c&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;d&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[2] == 1&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;d&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;e&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[3] == 1&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;ab&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[25] == 2&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;ab&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[25] == 2&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;String after the second transformation: &lt;code&gt;&amp;quot;cdeabab&amp;quot;&lt;/code&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;strong&gt;Final Length of the string:&lt;/strong&gt; The string is &lt;code&gt;&amp;quot;cdeabab&amp;quot;&lt;/code&gt;, which has 7 characters.&lt;/p&gt;
-	&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt; A subsequence that can be selected is &lt;code&gt;[&amp;quot;e&amp;quot;,&amp;quot;b&amp;quot;]&lt;/code&gt; because &lt;code&gt;groups[0] != groups[2]&lt;/code&gt;. Another subsequence that can be selected is &lt;code&gt;[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;]&lt;/code&gt; because &lt;code&gt;groups[1] != groups[2]&lt;/code&gt;. It can be demonstrated that the length of the longest subsequence of indices that satisfies the condition is &lt;code&gt;2&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class="example-block"&gt;
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io"&gt;s = &amp;quot;azbk&amp;quot;, t = 1, nums = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]&lt;/span&gt;&lt;/p&gt;
+&lt;div class="example-block" style="
+    border-color: var(--border-tertiary);
+    border-left-width: 2px;
+    color: var(--text-secondary);
+    font-size: .875rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    overflow: visible;
+    padding-left: 1rem;
+"&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; &lt;span class="example-io" style="
+    font-family: Menlo,sans-serif;
+    font-size: 0.85rem;
+"&gt;words = [&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;,&amp;quot;d&amp;quot;], groups = [1,0,1,1]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io"&gt;8&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;span class="example-io" style="
+    font-family: Menlo,sans-serif;
+    font-size: 0.85rem;
+"&gt;[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;strong&gt;First Transformation (t = 1):&lt;/strong&gt;&lt;/p&gt;
-
-	&lt;ul&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;a&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;bc&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[0] == 2&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;z&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;ab&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[25] == 2&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;b&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;cd&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[1] == 2&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;code&gt;&amp;#39;k&amp;#39;&lt;/code&gt; becomes &lt;code&gt;&amp;#39;lm&amp;#39;&lt;/code&gt; as &lt;code&gt;nums[10] == 2&lt;/code&gt;&lt;/li&gt;
-		&lt;li&gt;String after the first transformation: &lt;code&gt;&amp;quot;bcabcdlm&amp;quot;&lt;/code&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-	&lt;p&gt;&lt;strong&gt;Final Length of the string:&lt;/strong&gt; The string is &lt;code&gt;&amp;quot;bcabcdlm&amp;quot;&lt;/code&gt;, which has 8 characters.&lt;/p&gt;
-	&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt; A subsequence that can be selected is &lt;code&gt;[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;]&lt;/code&gt; because &lt;code&gt;groups[0] != groups[1]&lt;/code&gt; and &lt;code&gt;groups[1] != groups[2]&lt;/code&gt;. Another subsequence that can be selected is &lt;code&gt;[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;d&amp;quot;]&lt;/code&gt; because &lt;code&gt;groups[0] != groups[1]&lt;/code&gt; and &lt;code&gt;groups[1] != groups[3]&lt;/code&gt;. It can be shown that the length of the longest subsequence of indices that satisfies the condition is &lt;code&gt;3&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= s.length &amp;lt;= 10&lt;sup&gt;5&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;s&lt;/code&gt; consists only of lowercase English letters.&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= t &amp;lt;= 10&lt;sup&gt;9&lt;/sup&gt;&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;&lt;font face="monospace"&gt;nums.length == 26&lt;/font&gt;&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;&lt;font face="monospace"&gt;1 &amp;lt;= nums[i] &amp;lt;= 25&lt;/font&gt;&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= n == words.length == groups.length &amp;lt;= 100&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= words[i].length &amp;lt;= 10&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;groups[i]&lt;/code&gt; is either &lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1.&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;words&lt;/code&gt; consists of &lt;strong&gt;distinct&lt;/strong&gt; strings.&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;words[i]&lt;/code&gt; consists of lowercase English letters.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>You are given a string <code>s</code> consisting of lowercase English letters, an integer <code>t</code> representing the number of <strong>transformations</strong> to perform, and an array <code>nums</code> of size 26. In one <strong>transformation</strong>, every character in <code>s</code> is replaced according to the following rules:</p>
+      <content:encoded><![CDATA[<p>You are given a string array <code>words</code> and a <strong>binary</strong> array <code>groups</code> both of length <code>n</code>, where <code>words[i]</code> is associated with <code>groups[i]</code>.</p>
 
-<ul>
-	<li>Replace <code>s[i]</code> with the <strong>next</strong> <code>nums[s[i] - &#39;a&#39;]</code> consecutive characters in the alphabet. For example, if <code>s[i] = &#39;a&#39;</code> and <code>nums[0] = 3</code>, the character <code>&#39;a&#39;</code> transforms into the next 3 consecutive characters ahead of it, which results in <code>&quot;bcd&quot;</code>.</li>
-	<li>The transformation <strong>wraps</strong> around the alphabet if it exceeds <code>&#39;z&#39;</code>. For example, if <code>s[i] = &#39;y&#39;</code> and <code>nums[24] = 3</code>, the character <code>&#39;y&#39;</code> transforms into the next 3 consecutive characters ahead of it, which results in <code>&quot;zab&quot;</code>.</li>
-</ul>
+<p>Your task is to select the <strong>longest alternating</strong> <span data-keyword="subsequence-array">subsequence</span> from <code>words</code>. A subsequence of <code>words</code> is alternating if for any two consecutive strings in the sequence, their corresponding elements in the binary array <code>groups</code> differ. Essentially, you are to choose strings such that adjacent elements have non-matching corresponding bits in the <code>groups</code> array.</p>
 
-<p>Return the length of the resulting string after <strong>exactly</strong> <code>t</code> transformations.</p>
+<p>Formally, you need to find the longest subsequence of an array of indices <code>[0, 1, ..., n - 1]</code> denoted as <code>[i<sub>0</sub>, i<sub>1</sub>, ..., i<sub>k-1</sub>]</code>, such that <code>groups[i<sub>j</sub>] != groups[i<sub>j+1</sub>]</code> for each <code>0 &lt;= j &lt; k - 1</code> and then find the words corresponding to these indices.</p>
 
-<p>Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
+<p>Return <em>the selected subsequence. If there are multiple answers, return <strong>any</strong> of them.</em></p>
+
+<p><strong>Note:</strong> The elements in <code>words</code> are distinct.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">s = &quot;abcyy&quot;, t = 2, nums = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2]</span></p>
+<div class="example-block" style="
+    border-color: var(--border-tertiary);
+    border-left-width: 2px;
+    color: var(--text-secondary);
+    font-size: .875rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    overflow: visible;
+    padding-left: 1rem;
+">
+<p><strong>Input:</strong> <span class="example-io" style="
+    font-family: Menlo,sans-serif;
+    font-size: 0.85rem;
+">words = [&quot;e&quot;,&quot;a&quot;,&quot;b&quot;], groups = [0,0,1]</span></p>
 
-<p><strong>Output:</strong> <span class="example-io">7</span></p>
+<p><strong>Output:</strong> <span class="example-io" style="
+    font-family: Menlo,sans-serif;
+    font-size: 0.85rem;
+">[&quot;e&quot;,&quot;b&quot;]</span></p>
 
-<p><strong>Explanation:</strong></p>
-
-<ul>
-	<li>
-	<p><strong>First Transformation (t = 1):</strong></p>
-
-	<ul>
-		<li><code>&#39;a&#39;</code> becomes <code>&#39;b&#39;</code> as <code>nums[0] == 1</code></li>
-		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code> as <code>nums[1] == 1</code></li>
-		<li><code>&#39;c&#39;</code> becomes <code>&#39;d&#39;</code> as <code>nums[2] == 1</code></li>
-		<li><code>&#39;y&#39;</code> becomes <code>&#39;z&#39;</code> as <code>nums[24] == 1</code></li>
-		<li><code>&#39;y&#39;</code> becomes <code>&#39;z&#39;</code> as <code>nums[24] == 1</code></li>
-		<li>String after the first transformation: <code>&quot;bcdzz&quot;</code></li>
-	</ul>
-	</li>
-	<li>
-	<p><strong>Second Transformation (t = 2):</strong></p>
-
-	<ul>
-		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code> as <code>nums[1] == 1</code></li>
-		<li><code>&#39;c&#39;</code> becomes <code>&#39;d&#39;</code> as <code>nums[2] == 1</code></li>
-		<li><code>&#39;d&#39;</code> becomes <code>&#39;e&#39;</code> as <code>nums[3] == 1</code></li>
-		<li><code>&#39;z&#39;</code> becomes <code>&#39;ab&#39;</code> as <code>nums[25] == 2</code></li>
-		<li><code>&#39;z&#39;</code> becomes <code>&#39;ab&#39;</code> as <code>nums[25] == 2</code></li>
-		<li>String after the second transformation: <code>&quot;cdeabab&quot;</code></li>
-	</ul>
-	</li>
-	<li>
-	<p><strong>Final Length of the string:</strong> The string is <code>&quot;cdeabab&quot;</code>, which has 7 characters.</p>
-	</li>
-</ul>
+<p><strong>Explanation:</strong> A subsequence that can be selected is <code>[&quot;e&quot;,&quot;b&quot;]</code> because <code>groups[0] != groups[2]</code>. Another subsequence that can be selected is <code>[&quot;a&quot;,&quot;b&quot;]</code> because <code>groups[1] != groups[2]</code>. It can be demonstrated that the length of the longest subsequence of indices that satisfies the condition is <code>2</code>.</p>
 </div>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">s = &quot;azbk&quot;, t = 1, nums = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]</span></p>
+<div class="example-block" style="
+    border-color: var(--border-tertiary);
+    border-left-width: 2px;
+    color: var(--text-secondary);
+    font-size: .875rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    overflow: visible;
+    padding-left: 1rem;
+">
+<p><strong>Input:</strong> <span class="example-io" style="
+    font-family: Menlo,sans-serif;
+    font-size: 0.85rem;
+">words = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;], groups = [1,0,1,1]</span></p>
 
-<p><strong>Output:</strong> <span class="example-io">8</span></p>
+<p><strong>Output:</strong> <span class="example-io" style="
+    font-family: Menlo,sans-serif;
+    font-size: 0.85rem;
+">[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]</span></p>
 
-<p><strong>Explanation:</strong></p>
-
-<ul>
-	<li>
-	<p><strong>First Transformation (t = 1):</strong></p>
-
-	<ul>
-		<li><code>&#39;a&#39;</code> becomes <code>&#39;bc&#39;</code> as <code>nums[0] == 2</code></li>
-		<li><code>&#39;z&#39;</code> becomes <code>&#39;ab&#39;</code> as <code>nums[25] == 2</code></li>
-		<li><code>&#39;b&#39;</code> becomes <code>&#39;cd&#39;</code> as <code>nums[1] == 2</code></li>
-		<li><code>&#39;k&#39;</code> becomes <code>&#39;lm&#39;</code> as <code>nums[10] == 2</code></li>
-		<li>String after the first transformation: <code>&quot;bcabcdlm&quot;</code></li>
-	</ul>
-	</li>
-	<li>
-	<p><strong>Final Length of the string:</strong> The string is <code>&quot;bcabcdlm&quot;</code>, which has 8 characters.</p>
-	</li>
-</ul>
+<p><strong>Explanation:</strong> A subsequence that can be selected is <code>[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]</code> because <code>groups[0] != groups[1]</code> and <code>groups[1] != groups[2]</code>. Another subsequence that can be selected is <code>[&quot;a&quot;,&quot;b&quot;,&quot;d&quot;]</code> because <code>groups[0] != groups[1]</code> and <code>groups[1] != groups[3]</code>. It can be shown that the length of the longest subsequence of indices that satisfies the condition is <code>3</code>.</p>
 </div>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>s</code> consists only of lowercase English letters.</li>
-	<li><code>1 &lt;= t &lt;= 10<sup>9</sup></code></li>
-	<li><code><font face="monospace">nums.length == 26</font></code></li>
-	<li><code><font face="monospace">1 &lt;= nums[i] &lt;= 25</font></code></li>
+	<li><code>1 &lt;= n == words.length == groups.length &lt;= 100</code></li>
+	<li><code>1 &lt;= words[i].length &lt;= 10</code></li>
+	<li><code>groups[i]</code> is either <code>0</code> or <code>1.</code></li>
+	<li><code>words</code> consists of <strong>distinct</strong> strings.</li>
+	<li><code>words[i]</code> consists of lowercase English letters.</li>
 </ul>
 ]]></content:encoded>
-      <guid isPermaLink="false">total-characters-in-string-after-transformations-ii</guid>
-      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">longest-unequal-adjacent-groups-subsequence-i</guid>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
