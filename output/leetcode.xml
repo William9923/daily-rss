@@ -8,158 +8,78 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 16 May 2025 02:52:07 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 May 2025 01:12:21 +0000</lastBuildDate>
     <item>
-      <title>Longest Unequal Adjacent Groups Subsequence II</title>
-      <link>https://leetcode.com/problems/longest-unequal-adjacent-groups-subsequence-ii/</link>
-      <description>&lt;p&gt;You are given a string array &lt;code&gt;words&lt;/code&gt;, and an array &lt;code&gt;groups&lt;/code&gt;, both arrays having length &lt;code&gt;n&lt;/code&gt;.&lt;/p&gt;
+      <title>Sort Colors</title>
+      <link>https://leetcode.com/problems/sort-colors/</link>
+      <description>&lt;p&gt;Given an array &lt;code&gt;nums&lt;/code&gt; with &lt;code&gt;n&lt;/code&gt; objects colored red, white, or blue, sort them &lt;strong&gt;&lt;a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"&gt;in-place&lt;/a&gt; &lt;/strong&gt;so that objects of the same color are adjacent, with the colors in the order red, white, and blue.&lt;/p&gt;
 
-&lt;p&gt;The &lt;strong&gt;hamming distance&lt;/strong&gt; between two strings of equal length is the number of positions at which the corresponding characters are &lt;strong&gt;different&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;We will use the integers &lt;code&gt;0&lt;/code&gt;, &lt;code&gt;1&lt;/code&gt;, and &lt;code&gt;2&lt;/code&gt; to represent the color red, white, and blue, respectively.&lt;/p&gt;
 
-&lt;p&gt;You need to select the &lt;strong&gt;longest&lt;/strong&gt; &lt;span data-keyword="subsequence-array"&gt;subsequence&lt;/span&gt; from an array of indices &lt;code&gt;[0, 1, ..., n - 1]&lt;/code&gt;, such that for the subsequence denoted as &lt;code&gt;[i&lt;sub&gt;0&lt;/sub&gt;, i&lt;sub&gt;1&lt;/sub&gt;, ..., i&lt;sub&gt;k-1&lt;/sub&gt;]&lt;/code&gt; having length &lt;code&gt;k&lt;/code&gt;, the following holds:&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;For &lt;strong&gt;adjacent&lt;/strong&gt; indices in the subsequence, their corresponding groups are &lt;strong&gt;unequal&lt;/strong&gt;, i.e., &lt;code&gt;groups[i&lt;sub&gt;j&lt;/sub&gt;] != groups[i&lt;sub&gt;j+1&lt;/sub&gt;]&lt;/code&gt;, for each &lt;code&gt;j&lt;/code&gt; where &lt;code&gt;0 &amp;lt; j + 1 &amp;lt; k&lt;/code&gt;.&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;words[i&lt;sub&gt;j&lt;/sub&gt;]&lt;/code&gt; and &lt;code&gt;words[i&lt;sub&gt;j+1&lt;/sub&gt;]&lt;/code&gt; are &lt;strong&gt;equal&lt;/strong&gt; in length, and the &lt;strong&gt;hamming distance&lt;/strong&gt; between them is &lt;code&gt;1&lt;/code&gt;, where &lt;code&gt;0 &amp;lt; j + 1 &amp;lt; k&lt;/code&gt;, for all indices in the subsequence.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Return &lt;em&gt;a string array containing the words corresponding to the indices &lt;strong&gt;(in order)&lt;/strong&gt; in the selected subsequence&lt;/em&gt;. If there are multiple answers, return &lt;em&gt;any of them&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; strings in &lt;code&gt;words&lt;/code&gt; may be &lt;strong&gt;unequal&lt;/strong&gt; in length.&lt;/p&gt;
+&lt;p&gt;You must solve this problem without using the library&amp;#39;s sort function.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong class="example"&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class="example-block" style="border-color: var(--border-tertiary); border-left-width: 2px; color: var(--text-secondary); font-size: .875rem; margin-bottom: 1rem; margin-top: 1rem; overflow: visible; padding-left: 1rem;"&gt;
-&lt;p&gt;&lt;strong&gt;Input: &lt;/strong&gt;&lt;span class="example-io" style="font-family: Menlo,sans-serif; font-size: 0.85rem;"&gt;words = [&amp;quot;bab&amp;quot;,&amp;quot;dab&amp;quot;,&amp;quot;cab&amp;quot;], groups = [1,2,2]&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Output: &lt;/strong&gt;&lt;span class="example-io" style="font-family: Menlo,sans-serif; font-size: 0.85rem;"&gt;[&amp;quot;bab&amp;quot;,&amp;quot;cab&amp;quot;]&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Explanation: &lt;/strong&gt;A subsequence that can be selected is &lt;code&gt;[0,2]&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;groups[0] != groups[2]&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;words[0].length == words[2].length&lt;/code&gt;, and the hamming distance between them is 1.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So, a valid answer is &lt;code&gt;[words[0],words[2]] = [&amp;quot;bab&amp;quot;,&amp;quot;cab&amp;quot;]&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Another subsequence that can be selected is &lt;code&gt;[0,1]&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;groups[0] != groups[1]&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;words[0].length == words[1].length&lt;/code&gt;, and the hamming distance between them is &lt;code&gt;1&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So, another valid answer is &lt;code&gt;[words[0],words[1]] = [&amp;quot;bab&amp;quot;,&amp;quot;dab&amp;quot;]&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;It can be shown that the length of the longest subsequence of indices that satisfies the conditions is &lt;code&gt;2&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
+&lt;pre&gt;
+&lt;strong&gt;Input:&lt;/strong&gt; nums = [2,0,2,1,1,0]
+&lt;strong&gt;Output:&lt;/strong&gt; [0,0,1,1,2,2]
+&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong class="example"&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class="example-block" style="border-color: var(--border-tertiary); border-left-width: 2px; color: var(--text-secondary); font-size: .875rem; margin-bottom: 1rem; margin-top: 1rem; overflow: visible; padding-left: 1rem;"&gt;
-&lt;p&gt;&lt;strong&gt;Input: &lt;/strong&gt;&lt;span class="example-io" style="font-family: Menlo,sans-serif; font-size: 0.85rem;"&gt;words = [&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;,&amp;quot;d&amp;quot;], groups = [1,2,3,4]&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Output: &lt;/strong&gt;&lt;span class="example-io" style="font-family: Menlo,sans-serif; font-size: 0.85rem;"&gt;[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;,&amp;quot;d&amp;quot;]&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Explanation: &lt;/strong&gt;We can select the subsequence &lt;code&gt;[0,1,2,3]&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;It satisfies both conditions.&lt;/p&gt;
-
-&lt;p&gt;Hence, the answer is &lt;code&gt;[words[0],words[1],words[2],words[3]] = [&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;,&amp;quot;d&amp;quot;]&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;It has the longest length among all subsequences of indices that satisfy the conditions.&lt;/p&gt;
-
-&lt;p&gt;Hence, it is the only answer.&lt;/p&gt;
-&lt;/div&gt;
+&lt;pre&gt;
+&lt;strong&gt;Input:&lt;/strong&gt; nums = [2,0,1]
+&lt;strong&gt;Output:&lt;/strong&gt; [0,1,2]
+&lt;/pre&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= n == words.length == groups.length &amp;lt;= 1000&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= words[i].length &amp;lt;= 10&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;1 &amp;lt;= groups[i] &amp;lt;= n&lt;/code&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;words&lt;/code&gt; consists of &lt;strong&gt;distinct&lt;/strong&gt; strings.&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;words[i]&lt;/code&gt; consists of lowercase English letters.&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;n == nums.length&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;1 &amp;lt;= n &amp;lt;= 300&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;nums[i]&lt;/code&gt; is either &lt;code&gt;0&lt;/code&gt;, &lt;code&gt;1&lt;/code&gt;, or &lt;code&gt;2&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow up:&lt;/strong&gt;&amp;nbsp;Could you come up with a one-pass algorithm using only&amp;nbsp;constant extra space?&lt;/p&gt;
 </description>
-      <content:encoded><![CDATA[<p>You are given a string array <code>words</code>, and an array <code>groups</code>, both arrays having length <code>n</code>.</p>
+      <content:encoded><![CDATA[<p>Given an array <code>nums</code> with <code>n</code> objects colored red, white, or blue, sort them <strong><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a> </strong>so that objects of the same color are adjacent, with the colors in the order red, white, and blue.</p>
 
-<p>The <strong>hamming distance</strong> between two strings of equal length is the number of positions at which the corresponding characters are <strong>different</strong>.</p>
+<p>We will use the integers <code>0</code>, <code>1</code>, and <code>2</code> to represent the color red, white, and blue, respectively.</p>
 
-<p>You need to select the <strong>longest</strong> <span data-keyword="subsequence-array">subsequence</span> from an array of indices <code>[0, 1, ..., n - 1]</code>, such that for the subsequence denoted as <code>[i<sub>0</sub>, i<sub>1</sub>, ..., i<sub>k-1</sub>]</code> having length <code>k</code>, the following holds:</p>
-
-<ul>
-	<li>For <strong>adjacent</strong> indices in the subsequence, their corresponding groups are <strong>unequal</strong>, i.e., <code>groups[i<sub>j</sub>] != groups[i<sub>j+1</sub>]</code>, for each <code>j</code> where <code>0 &lt; j + 1 &lt; k</code>.</li>
-	<li><code>words[i<sub>j</sub>]</code> and <code>words[i<sub>j+1</sub>]</code> are <strong>equal</strong> in length, and the <strong>hamming distance</strong> between them is <code>1</code>, where <code>0 &lt; j + 1 &lt; k</code>, for all indices in the subsequence.</li>
-</ul>
-
-<p>Return <em>a string array containing the words corresponding to the indices <strong>(in order)</strong> in the selected subsequence</em>. If there are multiple answers, return <em>any of them</em>.</p>
-
-<p><strong>Note:</strong> strings in <code>words</code> may be <strong>unequal</strong> in length.</p>
+<p>You must solve this problem without using the library&#39;s sort function.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<div class="example-block" style="border-color: var(--border-tertiary); border-left-width: 2px; color: var(--text-secondary); font-size: .875rem; margin-bottom: 1rem; margin-top: 1rem; overflow: visible; padding-left: 1rem;">
-<p><strong>Input: </strong><span class="example-io" style="font-family: Menlo,sans-serif; font-size: 0.85rem;">words = [&quot;bab&quot;,&quot;dab&quot;,&quot;cab&quot;], groups = [1,2,2]</span></p>
-
-<p><strong>Output: </strong><span class="example-io" style="font-family: Menlo,sans-serif; font-size: 0.85rem;">[&quot;bab&quot;,&quot;cab&quot;]</span></p>
-
-<p><strong>Explanation: </strong>A subsequence that can be selected is <code>[0,2]</code>.</p>
-
-<ul>
-	<li><code>groups[0] != groups[2]</code></li>
-	<li><code>words[0].length == words[2].length</code>, and the hamming distance between them is 1.</li>
-</ul>
-
-<p>So, a valid answer is <code>[words[0],words[2]] = [&quot;bab&quot;,&quot;cab&quot;]</code>.</p>
-
-<p>Another subsequence that can be selected is <code>[0,1]</code>.</p>
-
-<ul>
-	<li><code>groups[0] != groups[1]</code></li>
-	<li><code>words[0].length == words[1].length</code>, and the hamming distance between them is <code>1</code>.</li>
-</ul>
-
-<p>So, another valid answer is <code>[words[0],words[1]] = [&quot;bab&quot;,&quot;dab&quot;]</code>.</p>
-
-<p>It can be shown that the length of the longest subsequence of indices that satisfies the conditions is <code>2</code>.</p>
-</div>
+<pre>
+<strong>Input:</strong> nums = [2,0,2,1,1,0]
+<strong>Output:</strong> [0,0,1,1,2,2]
+</pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<div class="example-block" style="border-color: var(--border-tertiary); border-left-width: 2px; color: var(--text-secondary); font-size: .875rem; margin-bottom: 1rem; margin-top: 1rem; overflow: visible; padding-left: 1rem;">
-<p><strong>Input: </strong><span class="example-io" style="font-family: Menlo,sans-serif; font-size: 0.85rem;">words = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;], groups = [1,2,3,4]</span></p>
-
-<p><strong>Output: </strong><span class="example-io" style="font-family: Menlo,sans-serif; font-size: 0.85rem;">[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;]</span></p>
-
-<p><strong>Explanation: </strong>We can select the subsequence <code>[0,1,2,3]</code>.</p>
-
-<p>It satisfies both conditions.</p>
-
-<p>Hence, the answer is <code>[words[0],words[1],words[2],words[3]] = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;]</code>.</p>
-
-<p>It has the longest length among all subsequences of indices that satisfy the conditions.</p>
-
-<p>Hence, it is the only answer.</p>
-</div>
+<pre>
+<strong>Input:</strong> nums = [2,0,1]
+<strong>Output:</strong> [0,1,2]
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>1 &lt;= n == words.length == groups.length &lt;= 1000</code></li>
-	<li><code>1 &lt;= words[i].length &lt;= 10</code></li>
-	<li><code>1 &lt;= groups[i] &lt;= n</code></li>
-	<li><code>words</code> consists of <strong>distinct</strong> strings.</li>
-	<li><code>words[i]</code> consists of lowercase English letters.</li>
+	<li><code>n == nums.length</code></li>
+	<li><code>1 &lt;= n &lt;= 300</code></li>
+	<li><code>nums[i]</code> is either <code>0</code>, <code>1</code>, or <code>2</code>.</li>
 </ul>
+
+<p>&nbsp;</p>
+<p><strong>Follow up:</strong>&nbsp;Could you come up with a one-pass algorithm using only&nbsp;constant extra space?</p>
 ]]></content:encoded>
-      <guid isPermaLink="false">longest-unequal-adjacent-groups-subsequence-ii</guid>
-      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">sort-colors</guid>
+      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
